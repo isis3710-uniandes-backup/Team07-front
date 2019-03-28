@@ -12,7 +12,7 @@ const Producto = props =>{
       <p className="card-text text-secondary">Talla: {props.data.talla}</p>
       <p className="card-text text-secondary">Precio: ${props.data.precio}</p>
       <p className="card-text text-secondary">Stock: {props.data.cantidadDisponible}</p>
-      <a href="#" className="btn btn=">Comprar </a>
+      <a href="#" className="btn btn=">Ver</a>
       </div>
     </div>
   );
