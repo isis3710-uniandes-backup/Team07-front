@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import Producto  from './Producto'
 import axios from 'axios'
+import Masonry from 'react-masonry-component';
+import './css/productoList-style.css';
+
 class ProductoList extends Component{
   constructor(props){
     super(props);
@@ -22,12 +25,15 @@ class ProductoList extends Component{
             });
     }
   render(){
+    const imagesLoadedOptions = { background: '.my-bg-image-el' }
     return(
+      <Masonry imagesLoadedOptions={imagesLoadedOptions}>
       <div className="container-fuid d-flex justify-content-center">
         <div className='row'>
           {this.state.productos.map( (prod)=> <Producto key={prod.id} data={prod}/>)}
         </div>
       </div>
+      </Masonry>
     )
   }
 }
