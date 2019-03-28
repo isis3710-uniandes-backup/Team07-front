@@ -1,4 +1,4 @@
-# Team07-back
+# Team07-Front
 ## Gift Now
 ### Descrición del proyecto:
 #### ¿Tienes problemas a la hora de escoger el regalo perfecto?
