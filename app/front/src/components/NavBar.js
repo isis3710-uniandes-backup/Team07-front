@@ -25,7 +25,7 @@ class NavBar extends Component{
             <a className="nav-link" href="/TarjetaRegaloList">Tarjetas de Regalo</a>
           </li>
             <li className="nav-item">
-            <a className="nav-link" href="/CuponList">Tarjetas de Regalo</a>
+            <a className="nav-link" href="/CuponList">Cupones</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/TiendaList">Tiendas</a>

@@ -10,8 +10,12 @@ class MarcaList extends Component{
     this.state={
       pagina: 0,
       marcas:[]
+    
     };
   }
+
+
+ 
 
   componentDidMount() {
         axios.get('http://localhost:3001/marcas')
@@ -20,6 +24,8 @@ class MarcaList extends Component{
                 var marcas = response.data;
                 state.marcas=marcas;
                 state.pagina = 0;
+
+
                 // pueden cambiar el tamaño de partion aca
                 this.setState(state);
             });
@@ -30,7 +36,9 @@ class MarcaList extends Component{
       <Masonry imagesLoadedOptions={imagesLoadedOptions}>
       <div className="container-fuid d-flex justify-content-center">
         <div className='row'>
-          {this.state.marcas.map( (marc)=> <Marca key={marc.id} data={marc}/>)}
+          {this.state.marcas.map( (marc)=> <Marca key={marc.id} data={marc} />)}
+      
+
         </div>
       </div>
       </Masonry>
