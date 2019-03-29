@@ -7,6 +7,7 @@ class ProductoDetail extends Component{
   constructor(props){
     super(props);
     this.state={
+      id:0,
       pagina: 0,
       nombre:"",
       src:"",
@@ -18,12 +19,13 @@ class ProductoDetail extends Component{
   }
 
   componentDidMount() {
-        const id=this.props.match.params.idProducto;
+        var id=this.props.match.params.idProducto;
         var i;
             axios.get('http://localhost:3001/producto/'+id)
                 .then((response) => {
                     var state = this.state;
                     var producto = response.data;
+                    state.id = id;
                     state.nombre = producto.nombre;
                     state.src = producto.src;
                     state.clasificacion = producto.clasificacion;
@@ -52,6 +54,47 @@ class ProductoDetail extends Component{
         cantidadDisponible:cant
       }
       axios.post('http://localhost:3001/producto', producto);
+      return false;
+    }
+    putProducto=()=>{
+      let nombre=document.getElementById('nombrePut').value;
+      if(nombre==""){
+        nombre=this.state.nombre;
+      }
+      let clas=document.getElementById('clasificacionPut').value;
+      if(clas==""){
+        clas=this.state.clasificacion;
+      }
+      let talla=document.getElementById('tallaPut').value;
+      if(talla==""){
+        talla=this.state.talla;
+      }
+      let img=document.getElementById('urlPut').value;
+      if(img==""){
+        img=this.state.src;
+      }
+      let luk=document.getElementById('precioPut').value;
+      if(luk==""){
+        luk=this.state.precio;
+      }
+      let cant=document.getElementById('cantidadPut').value;
+      if(cant==0){
+        cant=this.state.cant;
+      }
+      let producto={
+        nombre:nombre,
+        src:img,
+        clasificacion:clas,
+        talla:talla,
+        precio:luk,
+        cantidadDisponible:cant
+      }
+      axios.put('http://localhost:3001/producto/'+this.state.id, producto);
+      console.log(this.state.id);
+    }
+    deleteProducto=()=>{
+      axios.delete('http://localhost:3001/producto/'+this.state.id);
+      window.location.href = 'http://localhost:3000/ProductoList';
     }
   render(){
     return(
@@ -70,99 +113,99 @@ class ProductoDetail extends Component{
             <Link to={{
               pathname:"/ProductoList",
             }}  className="btn btn-outline-primary float-left">Volver</Link>
-            <button type="button" className="btn btn-danger float-right">Eliminar</button>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteProducto}>Eliminar</button>
             </div>
             </div>
         </div>
       </div>
       <div className="float-right">
         <h1>Crear un nuevo </h1>
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-12" for="email">Nombre producto:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="nombrePost" placeholder="Enter name"/>
+        <form className="form-horizontal">
+          <div className="form-group">
+            <label className="control-label col-sm-12">Nombre producto:</label>
+            <div className="col-sm-10">
+              <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
             </div>
           </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Url de imagen:</label>
-        <div class="col-sm-10">
-          <input type="url" class="form-control" id="urlPost" placeholder="Enter url"/>
+        <div className="form-group">
+          <label className="control-label col-sm-12">Url de imagen:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12">Clasificación:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="clasificacionPost" placeholder="Enter tags"/>
+        <div className="form-group">
+          <label className="control-label col-sm-12">Clasificación:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="clasificacionPost" placeholder="Enter tags"/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" >Talla disponible:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="tallaPost" placeholder="Enter size"/>
+        <div className="form-group">
+          <label className="control-label col-sm-12" >Talla disponible:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="tallaPost" placeholder="Enter size"/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" >Precio de venta:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="precioPost" placeholder="Enter value in COP"/>
+        <div className="form-group">
+          <label className="control-label col-sm-12" >Precio de venta:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="precioPost" placeholder="Enter value in COP"/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12">Cantidad disponible:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="cantidadPost" placeholder="Enter stock"/>
+        <div className="form-group">
+          <label className="control-label col-sm-12">Cantidad disponible:</label>
+        <div className="col-sm-10">
+          <input type="number" className="form-control" id="cantidadPost" placeholder="Enter stock"/>
         </div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-info" onClick={this.postProducto}>Crear</button>
+        <div className="form-group">
+          <div className="col-sm-offset-2 col-sm-10">
+              <button className="btn btn-success" onClick={this.postProducto}>Crear</button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
         <h1>Actualizar </h1>
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-12" for="email">Nombre producto:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="email" placeholder={this.state.nombre}/>
+        <form className="form-horizontal">
+          <div className="form-group">
+            <label className="control-label col-sm-12">Nombre producto:</label>
+            <div className="col-sm-10">
+              <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Url de imagen:</label>
-        <div class="col-sm-10">
-          <input type="url" class="form-control" id="pwd" placeholder={this.state.src}/>
+        <div className="form-group">
+          <label className="control-label col-sm-12" >Url de imagen:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Clasificación:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.clasificacion}/>
+        <div className="form-group">
+          <label className="control-label col-sm-12" >Clasificación:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="clasificacionPut" placeholder={this.state.clasificacion}/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Talla disponible:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.talla}/>
+        <div className="form-group">
+          <label className="control-label col-sm-12">Talla disponible:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control"  id="tallaPut" placeholder={this.state.talla}/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Precio de venta:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.precio}/>
+        <div className="form-group">
+          <label className="control-label col-sm-12">Precio de venta:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="precioPut"  placeholder={this.state.precio}/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Cantidad disponible:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.cant}/>
+        <div className="form-group">
+          <label className="control-label col-sm-12" >Cantidad disponible:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="cantidadPut" placeholder={this.state.cant}/>
         </div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-info" onClick={this.postProducto}>Crear</button>
+        <div className="form-group">
+          <div className="col-sm-offset-2 col-sm-10">
+            <button className="btn btn-info" onClick={this.putProducto}>Actualizar</button>
           </div>
         </div>
         </form >
