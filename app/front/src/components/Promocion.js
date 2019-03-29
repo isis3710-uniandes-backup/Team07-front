@@ -50,7 +50,6 @@ class Promocion extends Component{
         </div>
         <div className="card-body text-dark">
         <h4 className="card-title">{this.props.data.nombre}</h4>
-        <a href="/PromocionDetail" className="btn btn-outline-success">Ver más</a>
         </div>
         <div className="row">
         <div className="overflow">
@@ -60,6 +59,9 @@ class Promocion extends Component{
           <img className='card-img-top down' src={this.state.marcas[1]} alt='Image 1'/>
         </div>
         </div>
+        <Link to={{
+          pathname:"/PromocionDetail/"+this.props.data.id,
+        }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
       </div>
     );
   }

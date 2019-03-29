@@ -1,15 +1,25 @@
 [{
     "id": 1,
+    "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Centro_internacional.JPG/800px-Centro_internacional.JPG",
     "ciudad": "Bogota",
-    "direccion":"Uniandes",
+    "direccion":"Centro internacional",
     "email":"tvanessahb203@gmail.com",
     "fisica": "false"
   },
   {
     "id": 2,
+    "src":"http://www.guiasybaquianos.com/wp-content/uploads/2018/07/36650026_2247312672155253_3383966730647764992_n.jpg",
     "ciudad": "Santa Marta",
-    "direccion":"La casa de Santa Marta",
+    "direccion":"El rodadero",
     "email":"santamarta@gmail.com",
+    "fisica": "true"
+  },
+  {
+    "id": 3,
+    "src":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/San_Juan_de_Pasto_de_noche.jpg/1200px-San_Juan_de_Pasto_de_noche.jpg",
+    "ciudad": "Pasto",
+    "direccion":"La ciudad sorpresa",
+    "email":"ciudadsorpresa@gmail.com",
     "fisica": "true"
   }
 ]

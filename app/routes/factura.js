@@ -85,6 +85,9 @@ router.put('/:idFactura', function (req, res) {
       if(inp.tarjetaRegalo!=null){
         value.tarjetaRegalo=inp.tarjetaRegalo;
       }
+      if(inp.src!=null){
+        value.src=inp.src;
+      }
     }
   }
   jfs.writeFile('./JSON/factura.json', data, function (err) {
