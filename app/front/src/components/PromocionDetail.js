@@ -20,6 +20,8 @@ class PromocionDetail extends Component{
 
   componentDidMount() {
     var id=this.props.match.params.idPromocion;
+    var a=""
+    var idTienda=""
         axios.get('http://localhost:3001/tarjetaRegalo/'+id)
             .then((response) => {
                 var state = this.state;
@@ -29,14 +31,15 @@ class PromocionDetail extends Component{
                 state.fechaInicio = tarjetaRegalo.fechaDeInicio;
                 state.fechaFin=tarjetaRegalo.fechaDeFin;
                 state.pagina = 0;
+                a=tarjetaRegalo.marcas;
+                idTienda=tarjetaRegalo.idTienda;
                 // pueden cambiar el tamaño de partion aca
                 this.setState(state);
             });
-        const a=this.props.data.marcas
         console.log(a.length);
         var i;
         for (i = 0; i < a.length; i++){
-            axios.get('http://localhost:3001/marcas/'+this.props.data.marcas[i].idMarca)
+            axios.get('http://localhost:3001/marcas/'+a[i].idMarca)
                 .then((response) => {
                     var state = this.state;
                     var marca = response.data;
@@ -47,7 +50,7 @@ class PromocionDetail extends Component{
                     this.setState(state);
                 });
               }
-              axios.get('http://localhost:3001/tiendas/'+this.props.data.idTienda)
+              axios.get('http://localhost:3001/tiendas/'+idTienda)
                   .then((response) => {
                       var state = this.state;
                       var tienda = response.data;
