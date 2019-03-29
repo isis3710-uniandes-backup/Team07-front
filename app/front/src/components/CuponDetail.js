@@ -4,9 +4,14 @@ import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 class CuponDetail extends Component{
+
+
+
+
   constructor(props){
     super(props);
     this.state={
+      id:0,
       pagina: 0,
       idMarca:0,
       idTienda:0,
@@ -27,6 +32,7 @@ class CuponDetail extends Component{
                     state.idMarca = cupon.idMarca;
                     //state.productos = tienda.productos;
                     state.idTienda = cupon.idTienda;
+                    state.id=id
                     //tiendas
                     //promociones
                     
@@ -55,7 +61,42 @@ class CuponDetail extends Component{
         
       }
       axios.post('http://localhost:3001/cupones', cupon);
+      alert('Creacion correcta')
+    }
+
+      putCupon=()=>{
+      let idMarca=document.getElementById('idMarcaPut').value;
+      if(idMarca==0){
+        idMarca=this.state.idMarca;
+      }
+      let idTienda=document.getElementById('idTiendaPut').value;
+      if(idTienda==0){
+        idTienda=this.state.idTienda;
+      }
+      let valor=document.getElementById('valorPut').value;
+      if(valor==0){
+        valor=this.state.valor;
+      }
+
+       let fechaVencimiento=document.getElementById('fechaVencimientoPut').value;
+      if(fechaVencimiento==""){
+        fechaVencimiento=this.state.fechaVencimiento;
+      }
       
+      let cupon={
+        idMarca:idMarca,
+        idTienda:idTienda,
+        valor:valor,
+        fechaVencimiento:fechaVencimiento
+        
+      }
+      axios.put('http://localhost:3001/cupones/'+this.state.id, cupon);
+      console.log(this.state.id);
+      console.log("aaaaaaaaa");
+    }
+    deleteCupon=()=>{
+      axios.delete('http://localhost:3001/cupones/'+this.state.id);
+      window.location.href = 'http://localhost:3000/CuponList';
     }
   render(){
     return(
@@ -75,6 +116,8 @@ class CuponDetail extends Component{
             <Link to={{
               pathname:"/CuponList",
             }}  className="btn btn-outline-primary">Volver</Link>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteCupon}>Eliminar</button>
+
             </div>
         </div>
       </div>
@@ -117,44 +160,34 @@ class CuponDetail extends Component{
         <h1>Actualizar </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-12" for="email">Nombre producto:</label>
+            <label class="control-label col-sm-12" >ID de la marca del cupon:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="email" placeholder={this.state.nombre}/>
+              <input type="text" class="form-control" id="idMarcaPut" placeholder="ID"/>
             </div>
           </div>
+        
         <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Url de imagen:</label>
+          <label class="control-label col-sm-12" >ID de la tienda del cupon::</label>
         <div class="col-sm-10">
-          <input type="url" class="form-control" id="pwd" placeholder={this.state.src}/>
-        </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Clasificación:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.clasificacion}/>
+          <input type="text" class="form-control" id="idTiendaPut" placeholder="ID"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Talla disponible:</label>
+          <label class="control-label col-sm-12" >Valor del producto:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.talla}/>
+          <input type="text" class="form-control" id="valorPut" placeholder={this.state.talla}/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Precio de venta:</label>
+          <label class="control-label col-sm-12" >Fecha de vencimiento del producto:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.precio}/>
+          <input type="text" class="form-control" id="fechaVencimientoPut" placeholder="Formato DD-MM-AAAA"/>
         </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-12" for="pwd">Cantidad disponible:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="pwd" placeholder={this.state.cant}/>
-        </div>
-        </div>
+        
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-info" onClick={this.postProducto}>Crear</button>
+            <button class="btn btn-info" onClick={this.putCupon}>Actualizar</button>
           </div>
         </div>
         </form >
