@@ -1,17 +1,20 @@
 import React, {Component} from 'react'
-import Producto  from './Tienda'
+import Tienda  from './Tienda'
 import axios from 'axios'
+import Masonry from 'react-masonry-component';
+import './css/productoList-style.css';
+
 class TiendaList extends Component{
   constructor(props){
     super(props);
     this.state={
       pagina: 0,
-      productos:[]
+      tiendas:[]
     };
   }
 
   componentDidMount() {
-        axios.get('http://localhost:3001/tienda')
+        axios.get('http://localhost:3001/tiendas')
             .then((response) => {
                 var state = this.state;
                 var tiendas = response.data;
@@ -22,12 +25,15 @@ class TiendaList extends Component{
             });
     }
   render(){
+    const imagesLoadedOptions = { background: '.my-bg-image-el' }
     return(
+      <Masonry imagesLoadedOptions={imagesLoadedOptions}>
       <div className="container-fuid d-flex justify-content-center">
         <div className='row'>
-          {this.state.tiendas.map( (prod)=> <Tienda key={tien.id} data={tien}/>)}
+          {this.state.tiendas.map( (tien)=> <Tienda key={tien.id} data={tien}/>)}
         </div>
       </div>
+      </Masonry>
     )
   }
 }
