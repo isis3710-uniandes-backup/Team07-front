@@ -13,17 +13,5 @@ class Home extends Component{
       };
     }
 
-    pageBar(){
-        var links=document.getElementById('navbar');
-        var current = location.href;
-      for (var i=0; i < links.length; i++)
-      {
-       if(links[i].href == current)
-       {
-          links[i].href = "";
-          links[i].className='grayStyle';
-       }
-     }
-    }
-}
 
+}
