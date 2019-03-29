@@ -11,11 +11,9 @@ class Producto extends Component{
         </div>
         <div className="card-body text-dark">
         <h4 className="card-title">{this.props.data.nombre}</h4>
-        <p className="card-text text-secondary">Talla: {this.props.data.talla}</p>
         <p className="card-text text-secondary">Precio: ${this.props.data.precio}</p>
-        <p className="card-text text-secondary">Stock: {this.props.data.cantidadDisponible}</p>
         <Link to={{
-          pathname:"/ProductoDetail",
+          pathname:"/ProductoDetail/"+this.props.data.id,
         }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
         </div>
       </div>
