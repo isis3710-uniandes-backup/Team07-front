@@ -33,6 +33,15 @@ class NavBar extends Component{
           <li className="nav-item">
             <a className="nav-link" href="/MarcaList">Marcas</a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/DestinoList">Destinos</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/UsuarioList">Usuarios</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/FacturaList">Facturas</a>
+          </li>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input className="form-control" type="text" placeholder="Search"/>
