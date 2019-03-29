@@ -39,6 +39,24 @@ class CuponDetail extends Component{
                     this.setState(state);
                 });
     }
+
+       postCupon=()=>{
+      let idMarca=document.getElementById('idMarcaPost').value;
+      let idTienda=document.getElementById('idTiendaPost').value;
+      let valor=document.getElementById('valorPost').value;
+      let fechaVencimiento=document.getElementById('fechaVencimientoPost').value;
+     
+      let cupon={
+        idMarca:idMarca,
+        idTienda:idTienda,
+        valor:valor,
+        fechaVencimiento:fechaVencimiento
+        
+        
+      }
+      axios.post('http://localhost:3001/cupones', cupon);
+      
+    }
   render(){
     return(
       <div>
@@ -61,29 +79,82 @@ class CuponDetail extends Component{
         </div>
       </div>
       <div className="float-right">
+        <h1>Crear un nuevo </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
+            <label class="control-label col-sm-12">ID de la marca del cupon:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email"/>
+              <input type="text" class="form-control" id="idMarcaPost" placeholder="ID"/>
             </div>
           </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <label class="control-label col-sm-12" >ID de la tienda del cupon:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password"/>
+          <input type="url" class="form-control" id="idTiendaPost" placeholder="ID"/>
         </div>
-      </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12">Valor del producto:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="valorPost" placeholder="valor"/>
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" >Fecha de vencimiento del producto:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="fechaVencimientoPost" placeholder="Formato DD-MM-AAAA"/>
+        </div>
+        </div>
+       
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-              <label><input type="checkbox"/> Remember me</label>
-            </div>
+              <button class="btn btn-info" onClick={this.postCupon}>Crear</button>
           </div>
         </div>
+        </form >
+      </div>
+      <div className="float-left abc">
+        <h1>Actualizar </h1>
+        <form class="form-horizontal" action="/action_page.php">
+          <div class="form-group">
+            <label class="control-label col-sm-12" for="email">Nombre producto:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email" placeholder={this.state.nombre}/>
+            </div>
+          </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" for="pwd">Url de imagen:</label>
+        <div class="col-sm-10">
+          <input type="url" class="form-control" id="pwd" placeholder={this.state.src}/>
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" for="pwd">Clasificación:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pwd" placeholder={this.state.clasificacion}/>
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" for="pwd">Talla disponible:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pwd" placeholder={this.state.talla}/>
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" for="pwd">Precio de venta:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pwd" placeholder={this.state.precio}/>
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-12" for="pwd">Cantidad disponible:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pwd" placeholder={this.state.cant}/>
+        </div>
+        </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button class="btn btn-info" onClick={this.postProducto}>Crear</button>
           </div>
         </div>
         </form >
