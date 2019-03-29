@@ -27,6 +27,7 @@ class DestinoList extends Component{
 
   render(){
     const imagesLoadedOptions = { background: '.my-bg-image-el' }
+    
     return(
       <Masonry imagesLoadedOptions={imagesLoadedOptions}>
       <div className="container-fuid d-flex justify-content-center">

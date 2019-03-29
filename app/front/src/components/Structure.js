@@ -12,6 +12,10 @@ import MarcaList from './MarcaList'
 import Promociones from './Promociones'
 import PromocionDetail from './PromocionDetail'
 
+import UsuarioList from './UsuarioList'
+import DestinoList from './DestinoList'
+import FacturaList from './FacturaList'
+
 import Home from './Home'
 
 class Vista extends Component {
@@ -23,6 +27,7 @@ class Vista extends Component {
         return(
             <div>
                 <Navbar/>
+                <Route path="/Home" exact component={Home}/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/ProductoDetail/:idProducto" exact component={ProductoDetail}/>
                 <Route path="/TarjetaRegaloList" exact component={TarjetaRegaloList}/>
@@ -32,6 +37,9 @@ class Vista extends Component {
                 <Route path="/CuponList" exact component={CuponList}/>
                 <Route path="/TiendaList" exact component={TiendasList}/>
                 <Route path="/MarcaList" exact component={MarcaList}/>
+                <Route path="/DestinoList" exact component={DestinoList}/>
+                <Route path="/UsuarioList" exact component={UsuarioList}/>
+                <Route path="/FacturaList" exact component={FacturaList}/>
             </div>
         );
     }
