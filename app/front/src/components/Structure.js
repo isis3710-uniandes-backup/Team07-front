@@ -10,6 +10,7 @@ import TarjetaRegaloDetail from './TarjetaRegaloDetail'
 import TiendasList from './TiendaList'
 import MarcaList from './MarcaList'
 import Promociones from './Promociones'
+import PromocionDetail from './PromocionDetail'
 
 import UsuarioList from './UsuarioList'
 import DestinoList from './DestinoList'
@@ -32,6 +33,7 @@ class Vista extends Component {
                 <Route path="/TarjetaRegaloList" exact component={TarjetaRegaloList}/>
                 <Route path="/TarjetaRegaloDetail/:idTarjetaRegalo" exact component={TarjetaRegaloDetail}/>
                 <Route path="/Promociones" exact component={Promociones}/>
+                <Route path="/PromocionDetail/:idPromocion"exact component={PromocionDetail}/>
                 <Route path="/CuponList" exact component={CuponList}/>
                 <Route path="/TiendaList" exact component={TiendasList}/>
                 <Route path="/MarcaList" exact component={MarcaList}/>
