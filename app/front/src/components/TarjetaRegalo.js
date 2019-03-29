@@ -1,6 +1,6 @@
 import React from 'react';
 import shoes from '../ui/mockups/shoes.jpg'
-import './css/producto-style.css';
+import './css/tr-style.css';
 const TarjetaRegalo = props =>{
   return(
     <div className="card text-center">
@@ -10,7 +10,10 @@ const TarjetaRegalo = props =>{
       <div className="card-body text-dark">
       <h2 className="card-title">{props.data.titulo}</h2>
       <p className="card-text text-secondary">{props.data.mensaje}</p>
-      <a href="#" className="btn btn=">Comprar </a>
+      <div className="overflow">
+        <img className='card-img-top' src={props.data.plantilla} alt='Image 1'/>
+      </div>
+      <a href="#" className="btn btn-outline-success">Comprar </a>
       </div>
     </div>
   );
