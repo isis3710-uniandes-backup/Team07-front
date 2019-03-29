@@ -7,8 +7,8 @@ import ProductoList from './ProductoList'
 
 import TiendasList from './TiendaList'
 import MarcaList from './MarcaList'
-import Promociones from './Promociones'
-
+//import Promociones from './Promociones'
+                //<Route path="/Promociones" exact component={Promociones}/>
 import Home from './Home'
 
 class Vista extends Component {
@@ -22,7 +22,7 @@ class Vista extends Component {
                 <Navbar/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/TarjetaRegaloList" exact component={TarjetaRegaloList}/>
-                <Route path="/Promociones" exact component={Promociones}/>
+
                 <Route path="/CuponList" exact component={CuponList}/>
                 <Route path="/TiendaList" exact component={TiendasList}/>
                 <Route path="/MarcaList" exact component={MarcaList}/>

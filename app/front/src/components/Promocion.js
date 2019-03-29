@@ -9,15 +9,16 @@ class Promocion extends Component{
       pagina: 0,
       IDmarcas:[],
       IDtiendas:[],
-      tiendas:,
+      tienda:"",
       marcas:[]
     };
   }
 
   componentDidMount() {
+        const a=this.props.data.marcas
         var i;
-        for (i = 0; i < this.props.data.marcas[].length; i++){
-            axios.get('http://localhost:3001/'+{this.props.data.marcas[i].IdMarca})
+        for (i = 0; i < a.length; i++){
+            axios.get('http://localhost:3001/'+${a[i].IdMarca})
                 .then((response) => {
                     var state = this.state;
                     var marca = response.data;
