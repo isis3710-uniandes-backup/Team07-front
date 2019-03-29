@@ -20,10 +20,11 @@ class PromocionDetail extends Component{
 
   componentDidMount() {
     var id=this.props.match.params.idPromocion;
-    var a=""
-    var idTienda=""
-        axios.get('http://localhost:3001/tarjetaRegalo/'+id)
+
+        axios.get('http://localhost:3001/promocion/'+id)
             .then((response) => {
+                var a=[];
+                var idTienda=0
                 var state = this.state;
                 var tarjetaRegalo = response.data;
                 state.id = id;
@@ -32,34 +33,34 @@ class PromocionDetail extends Component{
                 state.fechaFin=tarjetaRegalo.fechaDeFin;
                 state.pagina = 0;
                 a=tarjetaRegalo.marcas;
+                console.log(a.length);
                 idTienda=tarjetaRegalo.idTienda;
                 // pueden cambiar el tamaño de partion aca
                 this.setState(state);
+                var i;
+                for (i = 0; i < a.length; i++){
+                    axios.get('http://localhost:3001/marcas/'+a[i].idMarca)
+                        .then((response) => {
+                            var state = this.state;
+                            var marca = response.data;
+                            state.marcas.push(marca.imagen);
+                            console.log(state.marcas[1]);
+                            state.pagina = 0;
+                            // pueden cambiar el tamaño de partion aca
+                            this.setState(state);
+                        });
+                      }
+                      axios.get('http://localhost:3001/tiendas/'+idTienda)
+                          .then((response) => {
+                              var state = this.state;
+                              var tienda = response.data;
+                              console.log(tienda);
+                              state.tienda =tienda.imagen;
+                              state.pagina = 0;
+                              // pueden cambiar el tamaño de partion aca
+                              this.setState(state);
+                          });
             });
-        console.log(a.length);
-        var i;
-        for (i = 0; i < a.length; i++){
-            axios.get('http://localhost:3001/marcas/'+a[i].idMarca)
-                .then((response) => {
-                    var state = this.state;
-                    var marca = response.data;
-                    state.marcas.push(marca.imagen);
-                    console.log(state.marcas[1]);
-                    state.pagina = 0;
-                    // pueden cambiar el tamaño de partion aca
-                    this.setState(state);
-                });
-              }
-              axios.get('http://localhost:3001/tiendas/'+idTienda)
-                  .then((response) => {
-                      var state = this.state;
-                      var tienda = response.data;
-                      console.log(tienda);
-                      state.tienda =tienda.imagen;
-                      state.pagina = 0;
-                      // pueden cambiar el tamaño de partion aca
-                      this.setState(state);
-                  });
     }
     postTarjetaRegalo=()=>{
       let nombre=document.getElementById('tituloPost').value;
