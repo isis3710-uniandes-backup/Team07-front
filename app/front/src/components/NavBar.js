@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-
+import './css/nav.css';
 
 class NavBar extends Component{
   render(){
     return(
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-      <a className="navbar-brand">GiftNow</a>
+      <a className="navbar-brand"><h2 className="gft">GiftNow</h2></a>
       <button className="navbar-toggler" type="button">
         <span className="navbar-toggler-icon"></span>
       </button>

@@ -2,7 +2,7 @@ body{
   background: radial-gradient(#e5e5e5, #ffff, #E5E5E5);
 }
 .card{
-  max-width: 20rem;
+  width: 20rem;
 }
 .card:hover{
   box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
@@ -26,3 +26,7 @@ body{
 }
 .card-img-top:hover{
   transform: scale(1.5)}
+.down{
+  max-width: 150px;
+  max-length: 80px;
+}

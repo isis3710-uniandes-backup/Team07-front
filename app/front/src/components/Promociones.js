@@ -30,11 +30,11 @@ class Promociones extends Component{
       <Masonry imagesLoadedOptions={imagesLoadedOptions}>
       <div className="container-fuid d-flex justify-content-center">
         <div className='row'>
-          {this.state.promociones.map( (prod)=> <Promociones key={prod.id} data={prod}/>)}
+          {this.state.promociones.map( (prod)=> <Promocion key={prod.id} data={prod}/>)}
         </div>
       </div>
       </Masonry>
     )
   }
 }
-export default ProductoList;
+export default Promociones;
