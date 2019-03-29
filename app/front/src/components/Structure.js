@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom'
 import Navbar from './NavBar'
 import TarjetaRegaloList from './TarjetaRegaloList'
 import ProductoList from './ProductoList'
+import Promociones from './Promociones'
 import Home from './Home'
 
 class Vista extends Component {
@@ -16,6 +17,7 @@ class Vista extends Component {
                 <Navbar/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/TarjetaRegaloList" exact component={TarjetaRegaloList}/>
+                <Route path="/Promociones" exact component={Promociones}/>
             </div>
         );
     }
