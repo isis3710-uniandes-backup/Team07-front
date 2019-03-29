@@ -62,7 +62,7 @@ class PromocionDetail extends Component{
                           });
             });
     }
-    postTarjetaRegalo=()=>{
+    postPromocion=()=>{
       let nombre=document.getElementById('tituloPost').value;
       let img=[];
       let url1=document.getElementById('url1Post').value;
@@ -129,9 +129,9 @@ class PromocionDetail extends Component{
       axios.put('http://localhost:3001/tarjetaRegalo/'+this.state.id, tarjetaRegalo);
       console.log(this.state.id);
     }
-    deleteTarjetaRegalo=()=>{
-      axios.delete('http://localhost:3001/tarjetaRegalo/'+this.state.id);
-      window.location.href = 'http://localhost:3000/TarjetaRegaloList';
+    deletePromocion=()=>{
+      axios.delete('http://localhost:3001/promocion/'+this.state.id);
+      window.location.href = 'http://localhost:3000/Promociones';
     }
   render(){
     return(
@@ -152,44 +152,35 @@ class PromocionDetail extends Component{
           <img className='card-img-top down' src={this.state.marcas[1]} alt='Image 1'/>
         </div>
         </div>
+        <div className="container">
         <Link to={{
           pathname:"/Promociones/",
-        }}  className="btn btn-outline-success">Ver más</Link>
+        }}  className="btn btn-outline-primary float-left">Volver</Link>
+        <button type="button" className="btn btn-danger float-right" onClick={this.deletePromocion}>Eliminar</button>
+        </div>
       </div>
       </div>
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1>Crear una nueva </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Titulo:</label>
+            <label className="control-label col-sm-12">Nombre:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="tituloPost" placeholder="Enter title"/>
+              <input type="text" className="form-control" id="nombrePost" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Urls de imagenes:</label>
+          <label className="control-label col-sm-12">Fechas de inicio y fin de la Promoción:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="url1Post" placeholder="Enter url"/>
+          <input type="text" className="form-control" id="fechaInicioPost" placeholder="Enter url"/>
         </div>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="url2Post" placeholder="Enter url"/>
-        </div>
-        </div>
-        <div className="form-group">
-          <label className="control-label col-sm-12">Mensaje:</label>
-        <div className="col-sm-10">
-          <input type="text" className="form-control" id="mensajePost" placeholder="Enter message"/>
-        </div>
-        </div>
-        <div className="form-group">
-          <label className="control-label col-sm-12" >Url plantilla:</label>
-        <div className="col-sm-10">
-          <input type="url" className="form-control" id="plantillaPost" placeholder="Enter size"/>
+          <input type="text" className="form-control" id="fechaFinPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTarjetaRegalo}>Crear</button>
+              <button className="btn btn-success" onClick={this.postPromocion}>Crear</button>
           </div>
         </div>
         </form >
@@ -198,35 +189,23 @@ class PromocionDetail extends Component{
         <h1>Actualizar </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Titulo:</label>
+            <label className="control-label col-sm-12">Nombre:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="tituloPut" placeholder="{this.state.nombre}"/>
+              <input type="text" className="form-control" id="nombrePut" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Urls de imagenes:</label>
+          <label className="control-label col-sm-12">Fechas de inicio y fin de la Promoción:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="url1Put" placeholder="{this.state.imagenes[0]}"/>
+          <input type="text" className="form-control" id="fechaInicioPut" placeholder="Enter url"/>
         </div>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="url2Put" placeholder="{this.state.imagenes[1]}"/>
-        </div>
-        </div>
-        <div className="form-group">
-          <label className="control-label col-sm-12">Mensaje:</label>
-        <div className="col-sm-10">
-          <input type="text" className="form-control" id="mensajePut" placeholder="{this.state.mensaje}"/>
-        </div>
-        </div>
-        <div className="form-group">
-          <label className="control-label col-sm-12" >Url plantilla:</label>
-        <div className="col-sm-10">
-          <input type="url" className="form-control" id="plantillaPut" placeholder="{this.state.plantilla}"/>
+          <input type="text" className="form-control" id="fechaFinPut" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTarjetaRegalo}>Actualizar</button>
+            <button className="btn btn-info" onClick={this.putPromocion}>Actualizar</button>
           </div>
         </div>
         </form >
