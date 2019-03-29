@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
-class Producto extends Component{
+class ProductoDetail extends Component{
+  console.log(this.state);
   render(){
     return(
       <div className="card text-center">
@@ -16,7 +17,7 @@ class Producto extends Component{
         <p className="card-text text-secondary">Stock: {this.props.data.cantidadDisponible}</p>
         <Link to={{
           pathname:"/ProductoDetail",
-        }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
+        }}  className="btn btn-outline-primary" data={this.props.data}>Volver</Link>
         </div>
       </div>
     );
