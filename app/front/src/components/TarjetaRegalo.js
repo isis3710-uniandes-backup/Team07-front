@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import shoes from '../ui/mockups/shoes.jpg'
 import './css/tr-style.css';
-const TarjetaRegalo = props =>{
+import {Link} from 'react-router-dom';
+class TarjetaRegalo extends Component{
+  render(){
   return(
     <div className="card text-center">
       <div className="overflow">
-        <img className='card-img-top' src={props.data.imagenes[0].url} alt='Image 1'/>
+        <img className='card-img-top' src={this.props.data.imagenes[0].url} alt='Image 1'/>
       </div>
       <div className="card-body text-dark">
-      <h2 className="card-title">{props.data.titulo}</h2>
-      <p className="card-text text-secondary">{props.data.mensaje}</p>
+      <h2 className="card-title">{this.props.data.titulo}</h2>
+      <p className="card-text text-secondary">{this.props.data.mensaje}</p>
       <div className="overflow">
-        <img className='card-img-top' src={props.data.plantilla} alt='Image 1'/>
+        <img className='card-img-top' src={this.props.data.plantilla} alt='Image 1'/>
       </div>
-      <a href="#" className="btn btn-outline-success">Comprar </a>
+      <Link to={{
+        pathname:"/TarjetaRegaloDetail/"+this.props.data.id,
+      }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
       </div>
     </div>
   );
+}
 }
 export default TarjetaRegalo;

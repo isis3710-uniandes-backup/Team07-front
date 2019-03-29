@@ -24,9 +24,9 @@ class TarjetaRegaloList extends Component{
   render(){
     return(
       <div className="container-fuid d-flex justify-content-center">
-        <div className='row'>
-          {this.state.tarjetas.map( (tarj)=> <TarjetaRegalo key={tarj.id} data={tarj}/>)}
-        </div>
+      <div className='row'>
+        {this.state.tarjetas.map( (tar)=> <TarjetaRegalo key={tar.id} data={tar}/>)}
+      </div>
       </div>
     )
   }
