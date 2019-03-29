@@ -24,6 +24,15 @@ class NavBar extends Component{
           <li className="nav-item">
             <a className="nav-link" href="/TarjetaRegaloList">Tarjetas de Regalo</a>
           </li>
+            <li className="nav-item">
+            <a className="nav-link" href="/CuponList">Tarjetas de Regalo</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/TiendaList">Tiendas</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/MarcaList">Marcas</a>
+          </li>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input className="form-control" type="text" placeholder="Search"/>
