@@ -27,12 +27,8 @@ class ProductoList extends Component{
   render(){
     const imagesLoadedOptions = { background: '.my-bg-image-el' }
     return(
-      <Masonry imagesLoadedOptions={imagesLoadedOptions}>
-      <div className="container-fuid d-flex justify-content-center">
-        <div className='row'>
+      <Masonry className="coso container-fuid d-flex justify-content-center">
           {this.state.productos.map( (prod)=> <Producto key={prod.id} data={prod}/>)}
-        </div>
-      </div>
       </Masonry>
     )
   }
