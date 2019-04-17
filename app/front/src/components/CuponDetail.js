@@ -3,6 +3,16 @@ import React, { Component } from 'react';
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import {FormattedMessage} from "react-intl";
+import {FormattedNumber} from 'react-intl';
+import {FormattedDate} from 'react-intl';
+import  {
+  createClass,
+  PropTypes,
+} from 'react';
+import {
+  IntlMixin,
+} from 'react-intl';
 class CuponDetail extends Component{
 
 
@@ -107,90 +117,102 @@ class CuponDetail extends Component{
             <img className='card-img-top' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5eWvXs13e_7NnqtKtYikKS9jpX0nvRbfp0zAyYH13HmEq4TaQ" alt='Image 1'/>
           </div>
             <div className="card-body text-dark">
-            <h4 className="card-title">Referencia: {this.props.match.params.idCupon}</h4>
-            <p className="card-text text-secondary">Marca: {this.state.idMarca}</p>
-            <p className="card-text text-secondary">Tienda: {this.state.idTienda}</p>
-            <p className="card-text text-secondary">Valor: {this.state.valor}</p>
-            <p className="card-text text-secondary">Fecha de vencimiento: {this.state.fechaVencimiento}</p>
+            <h4 className="card-title"><FormattedMessage id="Reference"/>: {this.props.match.params.idCupon}</h4>
+            <p className="card-text text-secondary"><FormattedMessage id="Brand"/>: {this.state.idMarca}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Store"/>: {this.state.idTienda}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Price"/>: $<FormattedNumber value={this.state.valor}/></p>
+            <p className="card-text text-secondary"><FormattedMessage id="Date"/>: <FormattedDate
+    value={new Date(this.state.fechaVencimiento)}
+    year='numeric'
+    month='long'
+    day='numeric'
+    weekday='long'
+  /></p>
            
             <Link to={{
               pathname:"/CuponList",
-            }}  className="btn btn-outline-primary">Volver</Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteCupon}>Eliminar</button>
+            }}  className="btn btn-outline-primary"><FormattedMessage id="Back"/></Link>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteCupon}><FormattedMessage id="Delete"/></button>
 
             </div>
         </div>
       </div>
+      <div class="row">
+      <div class="col-4">
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1><FormattedMessage id="Create"/> </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-12">ID de la marca del cupon:</label>
+            <label class="control-label col-sm-12"><FormattedMessage id="IdBrand"/></label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="idMarcaPost" placeholder="ID"/>
             </div>
           </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" >ID de la tienda del cupon:</label>
+          <label class="control-label col-sm-12" ><FormattedMessage id="IdStore"/>:</label>
         <div class="col-sm-10">
           <input type="url" class="form-control" id="idTiendaPost" placeholder="ID"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12">Valor del producto:</label>
+          <label class="control-label col-sm-12"><FormattedMessage id="Value"/>:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="valorPost" placeholder="valor"/>
+          <input type="text" class="form-control" id="valorPost" placeholder="$"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" >Fecha de vencimiento del producto:</label>
+          <label class="control-label col-sm-12" ><FormattedMessage id="Date2"/>:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="fechaVencimientoPost" placeholder="Formato DD-MM-AAAA"/>
+          <input type="text" class="form-control" id="fechaVencimientoPost" placeholder="AAAA-MM-DD"/>
         </div>
         </div>
        
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-info" onClick={this.postCupon}>Crear</button>
+              <button class="btn btn-info" onClick={this.postCupon}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form >
+        </div>
       </div>
+      <div class="col-5">
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify"/> </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-12" >ID de la marca del cupon:</label>
+            <label class="control-label col-sm-12" ><FormattedMessage id="IdBrand"/>:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="idMarcaPut" placeholder="ID"/>
             </div>
           </div>
         
         <div class="form-group">
-          <label class="control-label col-sm-12" >ID de la tienda del cupon::</label>
+          <label class="control-label col-sm-12" ><FormattedMessage id="IdStore"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="idTiendaPut" placeholder="ID"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" >Valor del producto:</label>
+          <label class="control-label col-sm-12" ><FormattedMessage id="Value"/>:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="valorPut" placeholder={this.state.talla}/>
+          <input type="text" class="form-control" id="valorPut" placeholder="$"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" >Fecha de vencimiento del producto:</label>
+          <label class="control-label col-sm-12" ><FormattedMessage id="Date2"/>:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="fechaVencimientoPut" placeholder="Formato DD-MM-AAAA"/>
+          <input type="text" class="form-control" id="fechaVencimientoPut" placeholder="AAAA-MM-DD"/>
         </div>
         </div>
         
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-info" onClick={this.putCupon}>Actualizar</button>
+            <button class="btn btn-info" onClick={this.putCupon}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form >
+      </div>
+      </div>
       </div>
       </div>
     );

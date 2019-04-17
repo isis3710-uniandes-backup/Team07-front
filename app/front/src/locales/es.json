@@ -1,0 +1,19 @@
+{
+	"Reference": "Referencia",
+	"Date": "Fecha de vencimiento",
+	"Price": "Valor",
+	"MoreDetails": "Ver más",
+	"PulibicationDate": "Fecha de publicación",
+	"Brand": "Marca",
+	"Store": "Tienda",
+	"Modify":"Modificar",
+	"Create":"Crear",
+	"IdBrand": "ID de la marca del cupon",
+	"IdStore":"ID de la tienda del cupon",
+	"Value":"Valor",
+	"Date2": "Fecha de vencimiento del producto",
+	"Delete":"Eliminar",
+	"Back":"Volver"
+	
+
+}

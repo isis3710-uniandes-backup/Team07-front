@@ -3,6 +3,7 @@ import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+
 class MarcaDetail extends Component{
   constructor(props){
     super(props);
