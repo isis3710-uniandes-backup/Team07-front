@@ -13,6 +13,12 @@
 	"Value":"Value",
 	"Date2": "Valid thru",
 	"Delete":"Delete",
-	"Back":"Back"
+	"Back":"Back",
+	"Direction":"Direction",
+	"Products":"Products",
+	"Promotions":"Promotions",
+	"StoreName" :"Store name",
+	"Image":"URL image"
+
 
 }

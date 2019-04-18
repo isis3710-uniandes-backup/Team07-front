@@ -13,7 +13,12 @@
 	"Value":"Valor",
 	"Date2": "Fecha de vencimiento del producto",
 	"Delete":"Eliminar",
-	"Back":"Volver"
+	"Back":"Volver",
+	"Direction":"Dirección",
+	"Products":"Productos",
+	"Promotions":"Promociones",
+	"StoreName" :"Nombre de la tienda",
+	"Image":"URL imagen"
 	
 
 }

@@ -3,6 +3,16 @@ import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import {FormattedMessage} from "react-intl";
+import {FormattedNumber} from 'react-intl';
+import {FormattedDate} from 'react-intl';
+import  {
+  createClass,
+  PropTypes,
+} from 'react';
+import {
+  IntlMixin,
+} from 'react-intl';
 class TiendaDetail extends Component{
   constructor(props){
     super(props);
@@ -96,23 +106,23 @@ class TiendaDetail extends Component{
           </div>
             <div className="card-body text-dark">
             <h4 className="card-title">{this.state.nombre}</h4>
-            <p className="card-text text-secondary">Direccion: {this.state.direccion}</p>
-            <p className="card-text text-secondary">Productos: Camiseta Polo</p>
-            <p className="card-text text-secondary">Productos: Tenis Reebok</p>
-            <p className="card-text text-secondary">Promociones: Madrugon Falabella</p>
-            <p className="card-text text-secondary">Promociones: BlackFriday</p>
-            <p className="card-text text-secondary">Descripcion: {this.state.descripcion}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Direction" />: {this.state.direccion}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Products" />: Camiseta Polo</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Products" />: Tenis Reebok</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Promotions" />: Madrugon Falabella</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Promotions" />: BlackFriday</p>
+            
             <div className="container">
             <Link to={{
               pathname:"/MarcaList",
-            }}  className="btn btn-outline-primary float-left">Volver</Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteTienda}>Eliminar</button>
+            }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back" /></Link>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteTienda}><FormattedMessage id="Delete" /></button>
             </div>
             </div>
         </div>
       </div>
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1><FormattedMessage id="Create" /> </h1>
         <form className="form-horizontal">
           <div className="form-group">
             <label className="control-label col-sm-12">Nombre producto:</label>
