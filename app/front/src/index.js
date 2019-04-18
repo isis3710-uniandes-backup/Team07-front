@@ -10,8 +10,36 @@ import TarjetaRegaloList from './components/TarjetaRegaloList';
 import UsuarioList from './components/UsuarioList';
 import DestinoList from './components/DestinoList';
 import FacturaList from './components/FacturaList';
+import {IntlProvider, addLocaleData} from 'react-intl';
+import enLocaleData from 'react-intl/locale-data/en';
+import localeEnMessages from "./locales/en";
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+
+import esLocaleData from 'react-intl/locale-data/es';
+import localeEsMessages from "./locales/es";
+
+const funleng = function(){
+
+    if(navigator.language.startsWith("en")){
+        return localeEnMessages;
+
+    }
+
+    else{
+        return localeEsMessages;
+    }
+
+}
+
+addLocaleData([...esLocaleData, ...enLocaleData])
+
+
+
+ReactDOM.render(
+	<IntlProvider locale={navigator.language} messages = {funleng()}>
+        <App/>
+    </IntlProvider>, document.getElementById("root")
+	 );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
