@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
-class Carousel extends React.Component {
+
+const imgUrls = [
+  "https://corporate.target.com/_media/TargetCorp/news/2017/ABV_GiftNow_Header.jpg",
+  "https://corporate.target.com/_media/TargetCorp/news/2017/GiftNowInline.jpg",
+  "http://www.visionpt.com.au/images/studio_blog/11/44185.jpg"
+]
+
+class Carousel extends Component {
 
     constructor(props){
         super(props);
 
         this.state = {
-            currentImageIndex: 0,
-            imgUrls: [
-                "https://corporate.target.com/_media/TargetCorp/news/2017/ABV_GiftNow_Header.jpg",
-                "https://corporate.target.com/_media/TargetCorp/news/2017/GiftNowInline.jpg"
-            ]
+            currentImageIndex: 0
+            
         };  
 
         this.nextSlide = this.nextSlide.bind(this);
@@ -19,7 +22,7 @@ class Carousel extends React.Component {
     }
 
     previousSlide(){
-        const lastIndex = this.state.imgURLs.length - 1;
+        const lastIndex = this.imgURLs.length - 1;
         const { currentImageIndex} = this.state;
         const shouldResetIndex = currentImageIndex === 0;
         const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
@@ -30,7 +33,7 @@ class Carousel extends React.Component {
     }
 
     nextSlide(){
-        const lastIndex = this.state.imgURLs.length - 1;
+        const lastIndex = this.imgURLs.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === lastIndex;
         const index = shouldResetIndex ? 0 : currentImageIndex + 1;
@@ -49,7 +52,7 @@ class Carousel extends React.Component {
                 clickFunction={this.previousSlide}
                 glyph="&#9664;" />
 
-            <ImageSlide url ={this.state.imgURLs[this.state.currentImageIndex]}/>
+            <img src = "http://www.visionpt.com.au/images/studio_blog/11/44185.jpg" />
 
             <Arrow
                 direction="right"
@@ -80,8 +83,4 @@ class Carousel extends React.Component {
       <div className="image-slide" style={styles}></div>
     );
   }
-  
-ReactDOM.render(
-    <Carousel/>,
-    document.getElementById("carouselContainer")
-);
+  export default Carousel;
