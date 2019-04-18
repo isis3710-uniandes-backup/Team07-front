@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Usuario  from './Usuario'
 import axios from 'axios'
 import Masonry from 'react-masonry-component';
-import './css/productoList-style.css';
 
 class UsuarioList extends Component{
   constructor(props){

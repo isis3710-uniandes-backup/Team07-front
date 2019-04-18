@@ -1,0 +1,24 @@
+{
+	"Reference": "Reference",
+	"Date": "Valid thru",
+	"Price": "Value",
+	"MoreDetails": "More details",
+	"PublicationDate": "Publication Date",
+	"Brand": "Brand",
+	"Store":"Store",
+	"Modify":"Modify",
+	"Create":"Create",
+	"IdBrand": "Brand's ID from the coupon",
+	"IdStore":"Store's ID from the coupon",
+	"Value":"Value",
+	"Date2": "Valid thru",
+	"Delete":"Delete",
+	"Back":"Back",
+	"Direction":"Direction",
+	"Products":"Products",
+	"Promotions":"Promotions",
+	"StoreName" :"Store name",
+	"Image":"URL image"
+
+
+}
