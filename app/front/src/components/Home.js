@@ -1,16 +1,16 @@
-import React, {Component} from 'react'
-
-import {Link} from 'react-router-dom';
+import React, {Component} from 'react';
+import './css/carousel.css';
 
 class Home extends Component{
 
     render(){
         return(  
-            <div>
-            <img src= "./assets/logo.png" width="100%" height="100%"/>
+            <div id="carouselContainer">
+                
             </div>
         );
     }
+
 }
 export default Home;
 
