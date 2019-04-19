@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
+import Carousel from './Carousel'
 import './css/carousel.css';
 
 class Home extends Component{
 
     render(){
         return(  
-            <div id="carouselContainer">
-                
+            <div>
+                <Carousel/>
             </div>
         );
     }

@@ -7,9 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import ProductoList from './components/ProductoList';
 import TarjetaRegaloList from './components/TarjetaRegaloList';
-import UsuarioList from './components/UsuarioList';
-import DestinoList from './components/DestinoList';
-import FacturaList from './components/FacturaList';
+
 import {IntlProvider, addLocaleData} from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
 import localeEnMessages from "./locales/en";
