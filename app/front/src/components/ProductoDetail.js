@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import {FormattedMessage} from "react-intl";
+import {FormattedNumber} from 'react-intl';
 class ProductoDetail extends Component{
   constructor(props){
     super(props);
@@ -106,106 +107,106 @@ class ProductoDetail extends Component{
           </div>
             <div className="card-body text-dark">
             <h4 className="card-title">{this.state.nombre}</h4>
-            <p className="card-text text-secondary">Talla: {this.state.talla}</p>
-            <p className="card-text text-secondary">Precio: ${this.state.precio}</p>
-            <p className="card-text text-secondary">Stock: {this.state.cant}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Size"/>: {this.state.talla}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Price"/>: ${this.state.precio}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Stock"/>: {this.state.cant}</p>
             <div className="container">
             <Link to={{
               pathname:"/ProductoList",
-            }}  className="btn btn-outline-primary float-left">Volver</Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteProducto}>Eliminar</button>
+            }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back"/></Link>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteProducto}><FormattedMessage id="Delete"/></button>
             </div>
             </div>
         </div>
       </div>
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Url de imagen:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Clasificación:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Class"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPost" placeholder="Enter tags"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Talla disponible:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Size"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="tallaPost" placeholder="Enter size"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Precio de venta:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Price"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="precioPost" placeholder="Enter value in COP"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Cantidad disponible:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="AvailableQ"/>:</label>
         <div className="col-sm-10">
           <input type="number" className="form-control" id="cantidadPost" placeholder="Enter stock"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postProducto}>Crear</button>
+              <button className="btn btn-success" onClick={this.postProducto}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url de imagen:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Clasificación:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Class"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPut" placeholder={this.state.clasificacion}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Talla disponible:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Size"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control"  id="tallaPut" placeholder={this.state.talla}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Precio de venta:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Price"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="precioPut"  placeholder={this.state.precio}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Cantidad disponible:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="AvailableQ"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="cantidadPut" placeholder={this.state.cant}/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putProducto}>Actualizar</button>
+            <button className="btn btn-info" onClick={this.putProducto}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form >

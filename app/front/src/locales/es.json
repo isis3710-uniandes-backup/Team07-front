@@ -1,7 +1,7 @@
 {
 	"Reference": "Referencia",
 	"Date": "Fecha de vencimiento",
-	"Price": "Valor",
+	"Price": "Precio",
 	"MoreDetails": "Ver más",
 	"PulibicationDate": "Fecha de publicación",
 	"Brand": "Marca",
@@ -18,7 +18,13 @@
 	"Products":"Productos",
 	"Promotions":"Promociones",
 	"StoreName" :"Nombre de la tienda",
-	"Image":"URL imagen"
-	
+	"Image":"URL imagen",
+	"CrearNuevo": "Crear Nuevo",
+	"PName": "Nombre Producto",
+	"Class": "Clasificación",
+	"Size": "Talla Disponible",
+	"AvailableQ": "Cantidad Disponible",
+	"Cards": "Tarjetas"
+
 
 }

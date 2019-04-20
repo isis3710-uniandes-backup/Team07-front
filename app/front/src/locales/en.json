@@ -18,7 +18,12 @@
 	"Products":"Products",
 	"Promotions":"Promotions",
 	"StoreName" :"Store name",
-	"Image":"URL image"
-
+	"Image":"URL image",
+	"CrearNuevo": "Create New",
+	"PName": "Product Name",
+	"Class": "Category",
+	"Size": "Available Size",
+	"AvailableQ": "Available Quantity",
+	"Cards":"Gift Cards"
 
 }
