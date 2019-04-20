@@ -33,15 +33,14 @@ componentDidMount() {
           <img className='card-img-top' src={this.props.data.src} alt='Image 1'/>
         </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">{this.state.name}</h4>
-        <p className="card-text text-secondary"><FormattedMessage id="Price" className="verde"/>: ${this.props.data.precio}</p>
+        <h1 className="card-title">{this.state.name}</h1>
         <Link to={{
           pathname:"/ProductoDetail/"+this.props.data.id,
         }}  className="btn btn-outline-success" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
         </div>
         <div className="cta">
           <div className="price">${this.props.data.precio}</div>
-          <button className="btn2">Add to cart<span className="bg"></span></button>
+          <button className="btn2"><FormattedMessage id="AddCart"/><span className="bg"></span></button>
         </div>
         <div className="bg"></div>
       </div>

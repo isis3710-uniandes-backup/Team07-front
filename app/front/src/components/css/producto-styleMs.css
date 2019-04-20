@@ -38,18 +38,18 @@ body{
   color: #23211f;
   font-weight: 600;
   font-size: 25px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .verde{
   color: #2ecc71;
 }
 .price {
     float: left;
-    color: #EF5777;
     font-size: 17px;
     font-weight: 900;
     padding-top: 2px;
     transition: color .3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
   }
   .cta {
       padding: 0px 10px 0px;
@@ -96,4 +96,8 @@ body{
       }
       .btn2:hover .bg {
         opacity: 1;
+      }
+      .btn {
+        padding-top: 20px;
+        font-family: 'Roboto', sans-serif;
       }

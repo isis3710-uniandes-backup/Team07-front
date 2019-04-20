@@ -24,7 +24,11 @@
 	"Class": "Clasificación",
 	"Size": "Talla Disponible",
 	"AvailableQ": "Cantidad Disponible",
-	"Cards": "Tarjetas"
+	"Cards": "Tarjetas",
+	"AddCart": "Al Carrito",
+	"Title": "Titulo",
+	"Message": "Mensaje",
+	"Plan": "URL Imagen Plantilla"
 
 
 }

@@ -24,6 +24,10 @@
 	"Class": "Category",
 	"Size": "Available Size",
 	"AvailableQ": "Available Quantity",
-	"Cards":"Gift Cards"
+	"Cards":"Gift Cards",
+	"AddCart": "Add to Cart",
+	"Title": "Title",
+	"Message": "Message",
+	"Plan": "Decorative Image URL"
 
 }

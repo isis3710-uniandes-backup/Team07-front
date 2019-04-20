@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import shoes from '../ui/mockups/shoes.jpg'
 import './css/tr-style.css';
 import {Link} from 'react-router-dom';
+import {FormattedMessage} from "react-intl";
 class TarjetaRegalo extends Component{
   render(){
   return(
@@ -17,7 +18,7 @@ class TarjetaRegalo extends Component{
       </div>
       <Link to={{
         pathname:"/TarjetaRegaloDetail/"+this.props.data.id,
-      }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
+      }}  className="btn btn-outline-success" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
       </div>
     </div>
   );
