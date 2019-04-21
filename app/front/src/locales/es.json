@@ -28,7 +28,8 @@
 	"AddCart": "Al Carrito",
 	"Title": "Titulo",
 	"Message": "Mensaje",
-	"Plan": "URL Imagen Plantilla"
-
+	"Plan": "URL Imagen Plantilla",
+	"FI": "Fecha Inicio",
+	"FF": "Fecha Fin"
 
 }

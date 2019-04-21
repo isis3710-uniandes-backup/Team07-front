@@ -36,7 +36,7 @@ componentDidMount() {
         <h1 className="card-title">{this.state.name}</h1>
         <Link to={{
           pathname:"/ProductoDetail/"+this.props.data.id,
-        }}  className="btn btn-outline-success" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
+        }}  className="btn3" data={this.props.data}><FormattedMessage id="MoreDetails"/><span className="bg"></span></Link>
         </div>
         <div className="cta">
           <div className="price">${this.props.data.precio}</div>

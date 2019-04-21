@@ -16,36 +16,36 @@ class NavBar extends Component{
           <li className="nav-item active">
             <a className="nav-link" href="/Home">Home</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/Promociones"><FormattedMessage id="Promotions"/></a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/ProductoList"><FormattedMessage id="Products"/></a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/TarjetaRegaloList"><FormattedMessage id="Cards"/></a>
           </li>
-            <li className="nav-item">
+            <li className="nav-item active">
             <a className="nav-link" href="/CuponList">Cupones</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/TiendaList">Tiendas</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/MarcaList">Marcas</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/DestinoList">Destinos</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/UsuarioList">Usuarios</a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item active">
             <a className="nav-link" href="/FacturaList">Facturas</a>
           </li>
           <li className="nav-item">
           <form className="form-inline my-2 my-md-0">
-            <input className="form-control" type="text" placeholder="Search"/>
+            <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
           </form>
           </li>
         </ul>
@@ -57,7 +57,7 @@ class NavBar extends Component{
         <li className="nav-item active">
           <a className="nav-link" href="#"><img className="abr" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-female-circle-pink-512.png" alt="UserIcon"></img></a>
         </li>
-        <li className="nav-item">
+        <li className="nav-item active">
           <a className="nav-link" href="">Admin</a>
         </li>
         </ul>

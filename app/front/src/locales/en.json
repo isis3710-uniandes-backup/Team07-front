@@ -28,6 +28,7 @@
 	"AddCart": "Add to Cart",
 	"Title": "Title",
 	"Message": "Message",
-	"Plan": "Decorative Image URL"
-
+	"Plan": "Decorative Image URL",
+	"FI": "Start Date",
+	"FF": "End Date"
 }

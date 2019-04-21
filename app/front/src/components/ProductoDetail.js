@@ -106,14 +106,14 @@ class ProductoDetail extends Component{
             <img className='card-img-top' src={this.state.src} alt='Image 1'/>
           </div>
             <div className="card-body text-dark">
-            <h4 className="card-title">{this.state.nombre}</h4>
+            <h1 className="card-title">{this.state.nombre}</h1>
             <p className="card-text text-secondary"><FormattedMessage id="Size"/>: {this.state.talla}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Price"/>: ${this.state.precio}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Stock"/>: {this.state.cant}</p>
             <div className="container">
             <Link to={{
               pathname:"/ProductoList",
-            }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back"/></Link>
+            }}  className="btn btn-primary"><FormattedMessage id="Back"/></Link>
             <button type="button" className="btn btn-danger float-right" onClick={this.deleteProducto}><FormattedMessage id="Delete"/></button>
             </div>
             </div>
@@ -123,37 +123,37 @@ class ProductoDetail extends Component{
         <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
+              <label className="control-label col-sm-12" for="nombrePost"><FormattedMessage id="PName"/>:</label>
               <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="urlPost"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Class"/>:</label>
+          <label className="control-label col-sm-12" for="clasificacionPost"><FormattedMessage id="Class"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPost" placeholder="Enter tags"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Size"/>:</label>
+          <label className="control-label col-sm-12" for="tallaPost"><FormattedMessage id="Size"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="tallaPost" placeholder="Enter size"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Price"/>:</label>
+          <label className="control-label col-sm-12" for="precioPost"><FormattedMessage id="Price"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="precioPost" placeholder="Enter value in COP"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="AvailableQ"/>:</label>
+          <label className="control-label col-sm-12" for="cantidadPost"><FormattedMessage id="AvailableQ"/>:</label>
         <div className="col-sm-10">
           <input type="number" className="form-control" id="cantidadPost" placeholder="Enter stock"/>
         </div>
@@ -169,37 +169,37 @@ class ProductoDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="PName"/>:</label>
+            <label className="control-label col-sm-12" for="nombrePut"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="urlPut"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Class"/>:</label>
+          <label className="control-label col-sm-12" for="clasificacionPut"><FormattedMessage id="Class"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPut" placeholder={this.state.clasificacion}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Size"/>:</label>
+          <label className="control-label col-sm-12" for="tallaPut"><FormattedMessage id="Size"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control"  id="tallaPut" placeholder={this.state.talla}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Price"/>:</label>
+          <label className="control-label col-sm-12" for="precioPut"><FormattedMessage id="Price"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="precioPut"  placeholder={this.state.precio}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="AvailableQ"/>:</label>
+          <label className="control-label col-sm-12" for="cantidadPut"><FormattedMessage id="AvailableQ"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="cantidadPut" placeholder={this.state.cant}/>
         </div>

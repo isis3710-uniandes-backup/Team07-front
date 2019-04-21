@@ -68,7 +68,7 @@ body{
         font-size: 13px;
         font-weight: 900;
         text-transform: uppercase;
-        color: #EF5777;
+        color: #DD133F;
         padding: 12px 18px;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
@@ -76,7 +76,7 @@ body{
         border: none;
         background: none;
         outline: none;
-        border: 1px solid #EF5777;
+        border: 1px solid #DD133F;
         border-radius: 20px;
         overflow: hidden;
       }
@@ -87,17 +87,54 @@ body{
         z-index: -1;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        background: linear-gradient(#EF5777, #9198e5);
+        background: linear-gradient(#DD133F, #9198e5);
       }
       .btn2:hover {
         color: #fff !important;
         border: 1px solid transparent !important;
-        background-color: #EF5777;
+        background-color: #DD133F;
       }
       .btn2:hover .bg {
         opacity: 1;
       }
+      .btn3 {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #343a40;
+        padding: 12px 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        line-height: 0.95;
+        border: none;
+        background: none;
+        outline: none;
+        border: 1px solid #343a40;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .btn3 .bg {
+        width: 101%;
+        height: 101%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: linear-gradient(#343a40, #9198e5);
+      }
+      .btn3:hover {
+        color: #fff !important;
+        border: 1px solid transparent !important;
+        background-color: #343a40;
+      }
+      .btn3:hover .bg {
+        opacity: 1;
+      }
+
       .btn {
         padding-top: 20px;
         font-family: 'Roboto', sans-serif;
+        color: #77EF57;
       }

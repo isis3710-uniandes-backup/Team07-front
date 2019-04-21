@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
+import {FormattedMessage} from "react-intl";
 import axios from 'axios'
 class PromocionDetail extends Component{
   constructor(props){
@@ -142,7 +143,7 @@ class PromocionDetail extends Component{
           <img className='card-img-top' src={this.state.tienda} alt='Image 1'/>
         </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">{this.state.nombre}</h4>
+        <h1 className="card-title">{this.state.nombre}</h1>
         </div>
         <div className="row">
         <div className="overflow">
@@ -155,57 +156,59 @@ class PromocionDetail extends Component{
         <div className="container">
         <Link to={{
           pathname:"/Promociones/",
-        }}  className="btn btn-outline-primary float-left">Volver</Link>
-        <button type="button" className="btn btn-danger float-right" onClick={this.deletePromocion}>Eliminar</button>
+        }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back"/></Link>
+        <button type="button" className="btn btn-danger float-right" onClick={this.deletePromocion}><FormattedMessage id="Delete"/></button>
         </div>
       </div>
       </div>
       <div className="float-right">
-        <h1>Crear una nueva </h1>
+        <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre:</label>
+            <label className="control-label col-sm-12" for="nombrePost"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePost" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Fechas de inicio y fin de la Promoción:</label>
+          <label className="control-label col-sm-12" for="fechaInicioPost"><FormattedMessage id="FI"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="fechaInicioPost" placeholder="Enter url"/>
         </div>
+          <label className="control-label col-sm-12" for="fechaFinPost"><FormattedMessage id="FF"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="fechaFinPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postPromocion}>Crear</button>
+              <button className="btn btn-success" onClick={this.postPromocion}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre:</label>
+            <label className="control-label col-sm-12" for="nombrePut"><FormattedMessage id="PName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Fechas de inicio y fin de la Promoción:</label>
+          <label className="control-label col-sm-12" for="fechaInicioPut"><FormattedMessage id="FI"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="fechaInicioPut" placeholder="Enter url"/>
+          <input type="text" className="form-control" id="fechaInicioPut" placeholder="Enter date"/>
         </div>
+          <label className="control-label col-sm-12" for="fechaFinPut"><FormattedMessage id="FF"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="fechaFinPut" placeholder="Enter url"/>
+          <input type="text" className="form-control" id="fechaFinPut" placeholder="Enter date"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putPromocion}>Actualizar</button>
+            <button className="btn btn-info" onClick={this.putPromocion}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form >
