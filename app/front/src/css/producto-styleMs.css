@@ -5,7 +5,8 @@ body{
   box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
 }
 .card-body{
-  padding: 3rem 0!important
+  padding: 3rem 0!important;
+  border-radius: 10px;
 }
 .card-text{
   font-size: 0.9rem;
@@ -33,3 +34,107 @@ body{
 .abc{
   padding-left: 130px;
 }
+.card-title{
+  color: #23211f;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+.verde{
+  color: #2ecc71;
+}
+.price {
+    float: left;
+    font-size: 17px;
+    font-weight: 900;
+    padding-top: 2px;
+    transition: color .3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+  }
+  .cta {
+      padding: 0px 10px 0px;
+    }
+.cta:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      .btn2 {
+        position: relative;
+        z-index: 1;
+        float: right;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #DD133F;
+        padding: 12px 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        line-height: 0.95;
+        border: none;
+        background: none;
+        outline: none;
+        border: 1px solid #DD133F;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .btn2 .bg {
+        width: 101%;
+        height: 101%;
+        display: block !important;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: linear-gradient(#DD133F, #9198e5);
+      }
+      .btn2:hover {
+        color: #fff !important;
+        border: 1px solid transparent !important;
+        background-color: #DD133F;
+      }
+      .btn2:hover .bg {
+        opacity: 1;
+      }
+      .btn3 {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #343a40;
+        padding: 12px 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        line-height: 0.95;
+        border: none;
+        background: none;
+        outline: none;
+        border: 1px solid #343a40;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .btn3 .bg {
+        width: 101%;
+        height: 101%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: linear-gradient(#343a40, #9198e5);
+      }
+      .btn3:hover {
+        color: #fff !important;
+        border: 1px solid transparent !important;
+        background-color: #343a40;
+      }
+      .btn3:hover .bg {
+        opacity: 1;
+      }
+
+      .btn {
+        padding-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        color: #77EF57;
+      }

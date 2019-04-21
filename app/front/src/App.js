@@ -8,19 +8,18 @@ import {IntlProvider} from 'react-intl';
 class App extends Component {
   render() {
     return (
-    	
       <div className="App">
         <BrowserRouter>
           <Vista/>
         </BrowserRouter>
       </div>
-      
+
     );
   }
 }
 
 function mapStateToProps(state){
-	return {		
+	return {
 	}
 }
 
