@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Carousel from './Carousel'
-import './css/carousel.css';
+import CarouselClass from './Carousel'
+
 
 class Home extends Component{
 
     render(){
         return(  
             <div>
-                <Carousel/>
+                <CarouselClass/>
             </div>
         );
     }

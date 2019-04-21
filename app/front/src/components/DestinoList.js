@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Destino  from './Destino'
 import axios from 'axios'
 import Masonry from 'react-masonry-component';
-import './css/productoList-style.css';
+import '../css/productoList-style.css';
 
 class DestinoList extends Component{
   constructor(props){

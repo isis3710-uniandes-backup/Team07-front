@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
-import './css/producto-styleMs.css';
+
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 class Producto extends Component{
   render(){

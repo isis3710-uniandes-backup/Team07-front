@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './css/nav.css';
+import '../css/nav.css';
 
 class NavBar extends Component{
   render(){
@@ -13,7 +13,7 @@ class NavBar extends Component{
       <div className="collapse navbar-collapse" id="navbarsExample02">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/Home">Home</a>
+            <a className="nav-link" href="/Home">Inicio</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/Promociones">Promociones</a>

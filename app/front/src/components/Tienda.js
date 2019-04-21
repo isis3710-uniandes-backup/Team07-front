@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './css/producto-style.css';
+import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 class Tienda extends Component{
   render(){

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
-import './css/producto-style.css';
+
+import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 class TarjetaRegaloDetail extends Component{
@@ -163,7 +163,7 @@ class TarjetaRegaloDetail extends Component{
               <button className="btn btn-success" onClick={this.postTarjetaRegalo}>Crear</button>
           </div>
         </div>
-        </form >
+        </form>
       </div>
       <div className="float-left abc">
         <h1>Actualizar </h1>
@@ -200,7 +200,7 @@ class TarjetaRegaloDetail extends Component{
             <button className="btn btn-info" onClick={this.putTarjetaRegalo}>Actualizar</button>
           </div>
         </div>
-        </form >
+        </form>
       </div>
       </div>
     );

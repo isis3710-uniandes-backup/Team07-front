@@ -13,6 +13,8 @@
     "jsonfile": "^5.0.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
-    "pug": "^2.0.0-beta11"
+    "pug": "^2.0.0-beta11",
+    "react-responsive-carousel": "^3.1.49",
+    "react-slideshow-image": "^1.1.5"
   }
 }

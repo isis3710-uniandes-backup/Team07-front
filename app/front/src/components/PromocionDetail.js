@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
-import './css/producto-style.css';
+
+import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 class PromocionDetail extends Component{
@@ -183,7 +183,7 @@ class PromocionDetail extends Component{
               <button className="btn btn-success" onClick={this.postPromocion}>Crear</button>
           </div>
         </div>
-        </form >
+        </form>
       </div>
       <div className="float-left abc">
         <h1>Actualizar </h1>
@@ -208,7 +208,7 @@ class PromocionDetail extends Component{
             <button className="btn btn-info" onClick={this.putPromocion}>Actualizar</button>
           </div>
         </div>
-        </form >
+        </form>
       </div>
       </div>
     );

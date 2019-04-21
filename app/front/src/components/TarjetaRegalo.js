@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
-import './css/tr-style.css';
+
+import '../css/tr-style.css';
 import {Link} from 'react-router-dom';
 class TarjetaRegalo extends Component{
   render(){
