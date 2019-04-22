@@ -4,7 +4,7 @@
     "ciudad": "Bogota",
     "direccion":"Centro internacional",
     "email":"tvanessahb203@gmail.com",
-    "fisica": "false"
+    "fisica": "no"
   },
   {
     "id": 2,
@@ -12,7 +12,7 @@
     "ciudad": "Santa Marta",
     "direccion":"El rodadero",
     "email":"santamarta@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 3,
@@ -20,15 +20,15 @@
     "ciudad": "Pasto",
     "direccion":"La ciudad sorpresa",
     "email":"ciudadsorpresa@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 4,
     "src":"https://vuelamax.com/wp-content/uploads/2013/06/tour-cayo-acuario-san-andres-600x448.jpg",
     "ciudad": "San Andrés",
-    "direccion":"El cayo Acuario",
+    "direccion":"El cayo acuario",
     "email":"acuario@gmail.com",
-    "fisica": "true"
+    "fisica": "no"
   },
   {
     "id": 5,
@@ -36,7 +36,7 @@
     "ciudad": "Medellín",
     "direccion":"Parque Arví",
     "email":"parquearvi@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 6,
@@ -44,7 +44,7 @@
     "ciudad": "Bogotá",
     "direccion":"Monserrate",
     "email":"monserrate@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 7,
@@ -52,7 +52,7 @@
     "ciudad": "Neiva",
     "direccion":"Desierto de la Tatacoa",
     "email":"tatacoa@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 8,
@@ -60,7 +60,7 @@
     "ciudad": "Bogotá",
     "direccion":"La Candelaria",
     "email":"candelaria@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 9,
@@ -68,6 +68,6 @@
     "ciudad": "Nariño",
     "direccion":"La Laguna de la Cocha",
     "email":"lagunacocha@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   }
 ]

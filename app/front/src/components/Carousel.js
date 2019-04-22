@@ -8,6 +8,9 @@ import '../css/style.css';
 import '../css/aos.css';
 import '../css/bootstrap-datepicker.css';
 
+
+import {FormattedMessage} from "react-intl";
+
 class CarouselClass extends Component{
 
   render(){
@@ -25,19 +28,18 @@ class CarouselClass extends Component{
 
                   <div className="col-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
 
-                    <h1 className="text-white font-weight-light"><b>Crea nuevos momentos</b></h1>
-                    <p className="mb-5" style={{color:"#FFFFFF"}}>Olvídate de la preocupación al no saber si lo que vas a regalar es lo indicado para la persona.</p>
-                    <p><a href="ProductoList" style= {{backgroundColor: "#EF5777"}} className="btn btn-primary py-3 px-5 text-white">IR AL SITIO</a></p>
+                    <h1 className="text-white font-weight-light"><b><FormattedMessage id="Moments"/></b></h1>
+                    <p className="mb-5" style={{color:"#FFFFFF"}}><FormattedMessage id="MoMessage"/></p>
+                    <p><a href="ProductoList" style= {{backgroundColor: "#EF5777"}} className="btn btn-primary py-3 px-5 text-white"><FormattedMessage id="Site"/></a></p>
 
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          
+                    
         </div>
-      </div>*/
+      </div>
 
       <div className="owl-nav">
 
