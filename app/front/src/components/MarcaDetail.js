@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import shoes from '../ui/mockups/shoes.jpg'
-import './css/producto-style.css';
+
+import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
