@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import '../css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
 import {FormattedNumber} from 'react-intl';
 import {FormattedDate} from 'react-intl';
+import styled from 'styled-components';
+import ReactTimeout from 'react-timeout'
 import  {
   createClass,
   PropTypes,
@@ -13,6 +15,16 @@ import  {
 import {
   IntlMixin,
 } from 'react-intl';
+const Container = styled.div`
+background-color: #444;
+color:white;
+position:absolute;
+top:${props=>props.top}px;
+z-index:999;
+transition: top 0.5s ease;
+margin-left: 1150px;
+
+`;
 class CuponDetail extends Component{
 
 
@@ -26,7 +38,9 @@ class CuponDetail extends Component{
       idMarca:0,
       idTienda:0,
       valor:0,
-      fechaVencimiento:""
+      fechaVencimiento:"",
+      top:-100,
+      msg:""
      
     };
   }
@@ -70,8 +84,9 @@ class CuponDetail extends Component{
         
         
       }
+      this.setState({top:1100, msg:"Se creo correctamente"});
       axios.post('http://localhost:3001/cupones', cupon);
-      alert('Creacion correcta')
+      this.props.setTimeout(this.reset, 500000);
     }
 
       putCupon=()=>{
@@ -100,14 +115,22 @@ class CuponDetail extends Component{
         fechaVencimiento:fechaVencimiento
         
       }
+      this.setState({top:1100, msg:"Se creo actualizo"});
       axios.put('http://localhost:3001/cupones/'+this.state.id, cupon);
+      window.location.href = 'http://localhost:3000/CuponList';
       console.log(this.state.id);
       console.log("aaaaaaaaa");
     }
     deleteCupon=()=>{
       axios.delete('http://localhost:3001/cupones/'+this.state.id);
       window.location.href = 'http://localhost:3000/CuponList';
+      this.props.setTimeout(this.reset, 500000);
     }
+     reset=()=>{
+
+      this.setState({top:-100, msg:""});
+    }
+
   render(){
     return(
       <div>
@@ -117,7 +140,7 @@ class CuponDetail extends Component{
             <img className='card-img-top' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5eWvXs13e_7NnqtKtYikKS9jpX0nvRbfp0zAyYH13HmEq4TaQ" alt='Image 1'/>
           </div>
             <div className="card-body text-dark">
-            <h4 className="card-title"><FormattedMessage id="Reference"/>: {this.props.match.params.idCupon}</h4>
+            <h1 className="card-title"><FormattedMessage id="Reference"/>: {this.props.match.params.idCupon}</h1>
             <p className="card-text text-secondary"><FormattedMessage id="Brand"/>: {this.state.idMarca}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Store"/>: {this.state.idTienda}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Price"/>: $<FormattedNumber value={this.state.valor}/></p>
@@ -131,8 +154,8 @@ class CuponDetail extends Component{
            
             <Link to={{
               pathname:"/CuponList",
-            }}  className="btn btn-outline-primary"><FormattedMessage id="Back"/></Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteCupon}><FormattedMessage id="Delete"/></button>
+            }}  className="back"><FormattedMessage id="Back"/></Link>
+            <button type="button" className="del float-right" onClick={this.deleteCupon}><FormattedMessage id="Delete"/></button>
 
             </div>
         </div>
@@ -143,25 +166,25 @@ class CuponDetail extends Component{
         <h1><FormattedMessage id="Create"/> </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-12"><FormattedMessage id="IdBrand"/></label>
+            <label class="control-label col-sm-12" for="idMarcaPost"><FormattedMessage id="IdBrand"/>:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="idMarcaPost" placeholder="ID"/>
             </div>
           </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" ><FormattedMessage id="IdStore"/>:</label>
+          <label class="control-label col-sm-12" for="idTiendaPost" ><FormattedMessage id="IdStore"/>:</label>
         <div class="col-sm-10">
-          <input type="url" class="form-control" id="idTiendaPost" placeholder="ID"/>
+          <input type="text" class="form-control" id="idTiendaPost" placeholder="ID"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12"><FormattedMessage id="Value"/>:</label>
+          <label class="control-label col-sm-12" for="valorPost"><FormattedMessage id="Value"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="valorPost" placeholder="$"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" ><FormattedMessage id="Date2"/>:</label>
+          <label class="control-label col-sm-12" for="fechaVencimientoPost"><FormattedMessage id="Date2"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="fechaVencimientoPost" placeholder="AAAA-MM-DD"/>
         </div>
@@ -169,7 +192,7 @@ class CuponDetail extends Component{
        
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-info" onClick={this.postCupon}><FormattedMessage id="Create"/></button>
+              <button class="create" onClick={this.postCupon}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form >
@@ -180,26 +203,26 @@ class CuponDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
-            <label class="control-label col-sm-12" ><FormattedMessage id="IdBrand"/>:</label>
+            <label class="control-label col-sm-12" for="idMarcaPut" ><FormattedMessage id="IdBrand"/>:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="idMarcaPut" placeholder="ID"/>
             </div>
           </div>
         
         <div class="form-group">
-          <label class="control-label col-sm-12" ><FormattedMessage id="IdStore"/>:</label>
+          <label class="control-label col-sm-12" for="idTiendaPut" ><FormattedMessage id="IdStore"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="idTiendaPut" placeholder="ID"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" ><FormattedMessage id="Value"/>:</label>
+          <label class="control-label col-sm-12" for="valorPut" ><FormattedMessage id="Value"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="valorPut" placeholder="$"/>
         </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-12" ><FormattedMessage id="Date2"/>:</label>
+          <label class="control-label col-sm-12" for="fechaVencimientoPut" ><FormattedMessage id="Date2"/>:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="fechaVencimientoPut" placeholder="AAAA-MM-DD"/>
         </div>
@@ -207,7 +230,7 @@ class CuponDetail extends Component{
         
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-info" onClick={this.putCupon}><FormattedMessage id="Modify"/></button>
+            <button class="back" onClick={this.putCupon}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form >

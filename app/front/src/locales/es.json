@@ -36,7 +36,10 @@
 	"Message": "Mensaje",
 	"Plan": "URL Imagen Plantilla",
 	"FI": "Fecha Inicio",
-	"FF": "Fecha Fin"
+	"FF": "Fecha Fin",
+	"Coupon":"Cupones",
+	"Stores":"Tiendas",
+	"Brands":"Marcas"
 
 
 }

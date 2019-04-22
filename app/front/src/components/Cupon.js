@@ -22,22 +22,22 @@ class Cupon extends Component{
           <img className='card-img-top' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5eWvXs13e_7NnqtKtYikKS9jpX0nvRbfp0zAyYH13HmEq4TaQ" alt='Image 1'/>
         </div>
         <div className="card-body text-dark">
-        <h3 className="card-title"><FormattedMessage id="Reference"/>: {this.props.data.id}</h3>
+        <h1 className="card-title"><FormattedMessage id="Reference"/>: {this.props.data.id}</h1>
 
     
 
 
-        <h4 className="card-title"><FormattedMessage id="Date"/>:     <FormattedDate
+        <h1 className="card-title"><FormattedMessage id="Date"/>:     <FormattedDate
     value={new Date(this.props.data.fechaVencimiento)}
     year='numeric'
     month='long'
     day='numeric'
     weekday='long'
-  /></h4>
+  /></h1>
         <p className="card-text text-secondary"><FormattedMessage id="Price"/>: $<FormattedNumber value={this.props.data.valor}/></p>
         <Link to={{
           pathname:"/CuponDetail/"+this.props.data.id,
-        }}  className="btn btn-outline-success" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
+        }}  className="btn3" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
         </div>
    </div>
     );

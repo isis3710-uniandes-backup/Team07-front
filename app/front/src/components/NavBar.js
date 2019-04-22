@@ -26,13 +26,13 @@ class NavBar extends Component{
             <a className="nav-link" href="/TarjetaRegaloList"><FormattedMessage id="Cards"/></a>
           </li>
             <li className="nav-item active">
-            <a className="nav-link" href="/CuponList">Cupones</a>
+            <a className="nav-link" href="/CuponList"><FormattedMessage id="Cuopons"/></a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/TiendaList">Tiendas</a>
+            <a className="nav-link" href="/TiendaList"><FormattedMessage id="Stores"/></a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/MarcaList">Marcas</a>
+            <a className="nav-link" href="/MarcaList"><FormattedMessage id="Brands"/></a>
           </li>
           <li className="nav-item active">
             <a className="nav-link" href="/DestinoList">Destinos</a>

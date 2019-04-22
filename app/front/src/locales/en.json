@@ -14,7 +14,7 @@
 	"Date2": "Valid thru",
 	"Delete":"Delete",
 	"Back":"Back",
-	"Direction":"Direction",
+	"Direction":"Location",
 	"Products":"Products",
 	"Promotions":"Promotions",
 	"StoreName" :"Store name",
@@ -42,6 +42,10 @@
 	"Message": "Message",
 	"Plan": "Decorative Image URL",
 	"FI": "Start Date",
-	"FF": "End Date"
+	"FF": "End Date",
+	"Coupon":"Coupon",
+	"Stores":"Stores",
+	"Brands":"Brands"
+
 }
 
