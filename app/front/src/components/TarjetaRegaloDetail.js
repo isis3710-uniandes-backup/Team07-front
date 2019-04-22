@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
@@ -123,8 +123,8 @@ class TarjetaRegaloDetail extends Component{
         <div className="container">
         <Link to={{
           pathname:"/TarjetaRegaloList/",
-        }}  className="btn btn-outline-primary float-left" data={this.props.data}><FormattedMessage id="Back"/></Link>
-        <button type="button" className="btn btn-danger float-right" onClick={this.deleteTarjetaRegalo}><FormattedMessage id="Delete"/></button>
+        }}  className="back float-left" data={this.props.data}><FormattedMessage id="Back"/></Link>
+        <button type="button" className="del float-right" onClick={this.deleteTarjetaRegalo}><FormattedMessage id="Delete"/></button>
         </div>
         </div>
       </div>
@@ -133,35 +133,36 @@ class TarjetaRegaloDetail extends Component{
         <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="Title"/>:</label>
+            <label className="control-label col-sm-12" for="tituloPost"><FormattedMessage id="Title"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="tituloPost" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="url1Post"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url1Post" placeholder="Enter url"/>
         </div>
+          <label className="control-label col-sm-12" for="url2Post"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url2Post" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Message"/>:</label>
+          <label className="control-label col-sm-12" for="mensajePost"><FormattedMessage id="Message"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="mensajePost" placeholder="Enter message"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Plan"/>:</label>
+          <label className="control-label col-sm-12" for="plantillaPost"><FormattedMessage id="Plan"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="plantillaPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTarjetaRegalo}><FormattedMessage id="Create"/></button>
+              <button className="create" onClick={this.postTarjetaRegalo}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form>
@@ -170,35 +171,36 @@ class TarjetaRegaloDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="Title"/>:</label>
+            <label className="control-label col-sm-12" for="tituloPut"><FormattedMessage id="Title"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="tituloPut" placeholder={this.state.titulo}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="url1Put"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url1Put" placeholder={this.state.imagenes[0]}/>
         </div>
+          <label className="control-label col-sm-12" for="url2Put"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url2Put" placeholder={this.state.imagenes[1]}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Message"/>:</label>
+          <label className="control-label col-sm-12" for="mensajePut"><FormattedMessage id="Message"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="mensajePut" placeholder={this.state.mensaje}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Plan"/>:</label>
+          <label className="control-label col-sm-12" for="plantillaPut"><FormattedMessage id="Plan"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="plantillaPut" placeholder={this.state.plantilla}/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTarjetaRegalo}><FormattedMessage id="Modify"/></button>
+            <button className="back" onClick={this.putTarjetaRegalo}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form>
