@@ -5,8 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import ProductoList from './components/ProductoList';
-import TarjetaRegaloList from './components/TarjetaRegaloList';
 
 import {IntlProvider, addLocaleData} from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';

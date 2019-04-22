@@ -133,28 +133,29 @@ class TarjetaRegaloDetail extends Component{
         <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="Title"/>:</label>
+            <label className="control-label col-sm-12" for="tituloPost"><FormattedMessage id="Title"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="tituloPost" placeholder="Enter title"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="url1Post"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url1Post" placeholder="Enter url"/>
         </div>
+          <label className="control-label col-sm-12" for="url2Post"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url2Post" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Message"/>:</label>
+          <label className="control-label col-sm-12" for="mensajePost"><FormattedMessage id="Message"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="mensajePost" placeholder="Enter message"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Plan"/>:</label>
+          <label className="control-label col-sm-12" for="plantillaPost"><FormattedMessage id="Plan"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="plantillaPost" placeholder="Enter url"/>
         </div>
@@ -170,28 +171,29 @@ class TarjetaRegaloDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12"><FormattedMessage id="Title"/>:</label>
+            <label className="control-label col-sm-12" for="tituloPut"><FormattedMessage id="Title"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="tituloPut" placeholder={this.state.titulo}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" for="url1Put"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url1Put" placeholder={this.state.imagenes[0]}/>
         </div>
+          <label className="control-label col-sm-12" for="url2Put"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="url2Put" placeholder={this.state.imagenes[1]}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12"><FormattedMessage id="Message"/>:</label>
+          <label className="control-label col-sm-12" for="mensajePut"><FormattedMessage id="Message"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="mensajePut" placeholder={this.state.mensaje}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" ><FormattedMessage id="Plan"/>:</label>
+          <label className="control-label col-sm-12" for="plantillaPut"><FormattedMessage id="Plan"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="plantillaPut" placeholder={this.state.plantilla}/>
         </div>

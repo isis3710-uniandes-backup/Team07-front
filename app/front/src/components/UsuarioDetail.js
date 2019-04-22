@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
-class TarjetaRegaloDetail extends Component{
+
+class UsuarioDetail extends Component{
   constructor(props){
     super(props);
     this.state={
@@ -16,7 +17,7 @@ class TarjetaRegaloDetail extends Component{
   }
 
   componentDidMount() {
-        var id=this.props.match.params.idTarjetaRegalo;
+        var id=this.props.match.params.idUsuario;
         var i;
             axios.get('http://localhost:3001/tarjetaRegalo/'+id)
                 .then((response) => {
@@ -205,4 +206,4 @@ class TarjetaRegaloDetail extends Component{
     );
   }
 }
-export default TarjetaRegaloDetail;
+export default UsuarioDetail;

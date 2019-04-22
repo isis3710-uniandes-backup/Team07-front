@@ -4,7 +4,7 @@
     "ciudad": "Bogota",
     "direccion":"Centro internacional",
     "email":"tvanessahb203@gmail.com",
-    "fisica": "false"
+    "fisica": "no"
   },
   {
     "id": 2,
@@ -12,7 +12,7 @@
     "ciudad": "Santa Marta",
     "direccion":"El rodadero",
     "email":"santamarta@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
   },
   {
     "id": 3,
@@ -20,6 +20,54 @@
     "ciudad": "Pasto",
     "direccion":"La ciudad sorpresa",
     "email":"ciudadsorpresa@gmail.com",
-    "fisica": "true"
+    "fisica": "si"
+  },
+  {
+    "id": 4,
+    "src":"https://vuelamax.com/wp-content/uploads/2013/06/tour-cayo-acuario-san-andres-600x448.jpg",
+    "ciudad": "San Andrés",
+    "direccion":"El cayo acuario",
+    "email":"acuario@gmail.com",
+    "fisica": "no"
+  },
+  {
+    "id": 5,
+    "src":"https://medellin.tips/wp-content/uploads/2016/07/medellin-parque-arvi-1024x640.jpg",
+    "ciudad": "Medellín",
+    "direccion":"Parque Arví",
+    "email":"parquearvi@gmail.com",
+    "fisica": "si"
+  },
+  {
+    "id": 6,
+    "src":"http://www.guiasybaquianos.com/wp-content/uploads/2019/02/Monserrate-1-1200x800.jpg",
+    "ciudad": "Bogotá",
+    "direccion":"Monserrate",
+    "email":"monserrate@gmail.com",
+    "fisica": "si"
+  },
+  {
+    "id": 7,
+    "src":"https://wordpress-network.prod.aws.skyscnr.com/wp-content/uploads/2018/05/desierto-tatacoa.jpg?w=1000&h=312&crop=1",
+    "ciudad": "Neiva",
+    "direccion":"Desierto de la Tatacoa",
+    "email":"tatacoa@gmail.com",
+    "fisica": "si"
+  },
+  {
+    "id": 8,
+    "src":"https://media2.trover.com/T/582a82bd74a351217d000316/fixedw_large_4x.jpg",
+    "ciudad": "Bogotá",
+    "direccion":"La Candelaria",
+    "email":"candelaria@gmail.com",
+    "fisica": "si"
+  },
+  {
+    "id": 9,
+    "src":"https://tierracolombiana.org/wp-content/uploads/2018/08/20.png",
+    "ciudad": "Nariño",
+    "direccion":"La Laguna de la Cocha",
+    "email":"lagunacocha@gmail.com",
+    "fisica": "si"
   }
 ]

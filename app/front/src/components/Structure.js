@@ -25,9 +25,6 @@ import FacturaList from './FacturaList'
 import Home from './Home'
 
 class Vista extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return(
