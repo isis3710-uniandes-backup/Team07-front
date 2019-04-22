@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/destinoStyle.css';
+import '../css/destinoStyle.css';
 
 import {Link} from 'react-router-dom';
 

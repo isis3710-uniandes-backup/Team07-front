@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/usuarioStyle.css';
+import '../css/usuarioStyle.css';
 
 import {Link} from 'react-router-dom';
 

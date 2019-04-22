@@ -19,6 +19,7 @@
 	"Promotions":"Promotions",
 	"StoreName" :"Store name",
 	"Image":"URL image",
+<<<<<<< HEAD
 	"Category":"Category",
 	"From":"From",
 	"About":"About",
@@ -28,3 +29,18 @@
 
 
 }
+=======
+	"CrearNuevo": "Create New",
+	"PName": "Product Name",
+	"Class": "Category",
+	"Size": "Available Size",
+	"AvailableQ": "Available Quantity",
+	"Cards":"Gift Cards",
+	"AddCart": "Add to Cart",
+	"Title": "Title",
+	"Message": "Message",
+	"Plan": "Decorative Image URL",
+	"FI": "Start Date",
+	"FF": "End Date"
+}
+>>>>>>> 1d05d77fa809a6b6c0b683a2a0a1f9403f507979

@@ -11,7 +11,7 @@ import {
 } from 'react-intl';
 
 
-import './css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 class Cupon extends Component{
 

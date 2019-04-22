@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/facturaStyle.css';
+import '../css/facturaStyle.css';
 
 import {Link} from 'react-router-dom';
 

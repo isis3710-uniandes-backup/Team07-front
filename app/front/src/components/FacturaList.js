@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Factura  from './Factura'
 import axios from 'axios'
 import Masonry from 'react-masonry-component';
-import './css/productoList-style.css';
+import '../css/productoList-style.css';
 
 class FacturaList extends Component{
   constructor(props){

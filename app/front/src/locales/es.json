@@ -1,7 +1,7 @@
 {
 	"Reference": "Referencia",
 	"Date": "Fecha de vencimiento",
-	"Price": "Valor",
+	"Price": "Precio",
 	"MoreDetails": "Ver más",
 	"PulibicationDate": "Fecha de publicación",
 	"Brand": "Marca",
@@ -19,9 +19,24 @@
 	"Promotions":"Promociones",
 	"StoreName" :"Nombre de la tienda",
 	"Image":"URL imagen",
+<<<<<<< HEAD
 	"Category":"Categoria",
 	"From":"Origen",
 	"About":"Descripcion",
 	"BrandName":"Nombre de la marca"
+=======
+	"CrearNuevo": "Crear Nuevo",
+	"PName": "Nombre Producto",
+	"Class": "Clasificación",
+	"Size": "Talla Disponible",
+	"AvailableQ": "Cantidad Disponible",
+	"Cards": "Tarjetas",
+	"AddCart": "Al Carrito",
+	"Title": "Titulo",
+	"Message": "Mensaje",
+	"Plan": "URL Imagen Plantilla",
+	"FI": "Fecha Inicio",
+	"FF": "Fecha Fin"
+>>>>>>> 1d05d77fa809a6b6c0b683a2a0a1f9403f507979
 
 }
