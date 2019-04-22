@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 
 class Destino extends Component{
   render(){
-    console.log(this.props.data.src)
     return( 
       <div className="card text-center">
         <div className="overflow">
