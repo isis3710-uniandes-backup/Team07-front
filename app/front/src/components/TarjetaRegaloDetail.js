@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
@@ -123,8 +123,8 @@ class TarjetaRegaloDetail extends Component{
         <div className="container">
         <Link to={{
           pathname:"/TarjetaRegaloList/",
-        }}  className="btn btn-outline-primary float-left" data={this.props.data}><FormattedMessage id="Back"/></Link>
-        <button type="button" className="btn btn-danger float-right" onClick={this.deleteTarjetaRegalo}><FormattedMessage id="Delete"/></button>
+        }}  className="back float-left" data={this.props.data}><FormattedMessage id="Back"/></Link>
+        <button type="button" className="del float-right" onClick={this.deleteTarjetaRegalo}><FormattedMessage id="Delete"/></button>
         </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ class TarjetaRegaloDetail extends Component{
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTarjetaRegalo}><FormattedMessage id="Create"/></button>
+              <button className="create" onClick={this.postTarjetaRegalo}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form>
@@ -198,7 +198,7 @@ class TarjetaRegaloDetail extends Component{
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTarjetaRegalo}><FormattedMessage id="Modify"/></button>
+            <button className="back" onClick={this.putTarjetaRegalo}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form>

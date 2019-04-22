@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import {FormattedMessage} from "react-intl";
 import axios from 'axios'
@@ -156,8 +156,8 @@ class PromocionDetail extends Component{
         <div className="container">
         <Link to={{
           pathname:"/Promociones/",
-        }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back"/></Link>
-        <button type="button" className="btn btn-danger float-right" onClick={this.deletePromocion}><FormattedMessage id="Delete"/></button>
+        }}  className="back float-left"><FormattedMessage id="Back"/></Link>
+        <button type="button" className="del float-right" onClick={this.deletePromocion}><FormattedMessage id="Delete"/></button>
         </div>
       </div>
       </div>
@@ -182,7 +182,7 @@ class PromocionDetail extends Component{
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postPromocion}><FormattedMessage id="Create"/></button>
+              <button className="create" onClick={this.postPromocion}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form>
@@ -208,7 +208,7 @@ class PromocionDetail extends Component{
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putPromocion}><FormattedMessage id="Modify"/></button>
+            <button className="back" onClick={this.putPromocion}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form>
