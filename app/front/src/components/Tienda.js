@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FormattedMessage} from "react-intl";
 
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
@@ -11,11 +12,13 @@ class Tienda extends Component{
         </div>
         <div className="card-body text-dark">
         <h4 className="card-title">{this.props.data.nombre}</h4>
-        <p className="card-text text-secondary">Direccion: {this.props.data.direccion}</p>
+        <p className="card-text text-secondary"><FormattedMessage id="Direction"/>: {this.props.data.direccion}</p>
         <Link to={{
           pathname:"/TiendaDetail/"+this.props.data.id,
-        }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
+        }}  className="btn btn-outline-success" data={this.props.data}><FormattedMessage id="MoreDetails" /></Link>
         </div>
+        
+    
       </div>
     );
   }

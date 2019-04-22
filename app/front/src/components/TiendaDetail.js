@@ -125,58 +125,58 @@ class TiendaDetail extends Component{
         <h1><FormattedMessage id="Create" /> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="StoreName" />:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
+              <input type="text" className="form-control" id="nombrePost" placeholder={this.state.nombre} />
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Url de imagen:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Image" />:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
+          <input type="url" className="form-control" id="urlPost" placeholder="URL"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Direccion:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Direction" />:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPost" placeholder="Enter tags"/>
+          <input type="text" className="form-control" id="direccionPost" placeholder=""/>
         </div>
         </div>
         
       
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTienda}>Crear</button>
+              <button className="btn btn-success" onClick={this.postTienda}><FormattedMessage id="Create" /></button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify" /> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="StoreName" />:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url de imagen:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Image" />:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
+          <input type="url" className="form-control" id="urlPut" placeholder="URL"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Direccion:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Direction" />:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPut" placeholder={this.state.clasificacion}/>
+          <input type="text" className="form-control" id="direccionPut" placeholder=""/>
         </div>
         </div>
         
        
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTienda}>Actualizar</button>
+            <button className="btn btn-info" onClick={this.putTienda}><FormattedMessage id ="Modify"/></button>
           </div>
         </div>
         </form >

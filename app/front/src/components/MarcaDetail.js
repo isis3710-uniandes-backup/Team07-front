@@ -3,6 +3,7 @@ import shoes from '../ui/mockups/shoes.jpg'
 import './css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import {FormattedMessage} from "react-intl";
 
 class MarcaDetail extends Component{
   constructor(props){
@@ -104,47 +105,47 @@ class MarcaDetail extends Component{
           </div>
             <div className="card-body text-dark">
             <h4 className="card-title">{this.state.nombre}</h4>
-            <p className="card-text text-secondary">Clasificacion: {this.state.clasificacion}</p>
-            <p className="card-text text-secondary">Origen: {this.state.origen}</p>
-            <p className="card-text text-secondary">Descripcion: {this.state.descripcion}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Category"/>: {this.state.clasificacion}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="From"/>: {this.state.origen}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Description"/>: {this.state.descripcion}</p>
             <div className="container">
             <Link to={{
               pathname:"/MarcaList",
-            }}  className="btn btn-outline-primary float-left">Volver</Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteMarca}>Eliminar</button>
+            }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back"/></Link>
+            <button type="button" className="btn btn-danger float-right" onClick={this.deleteMarca}><FormattedMessage id="Delete"/></button>
             </div>
             </div>
         </div>
       </div>
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1><FormattedMessage id="Create"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="BrandName"/>:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
+              <input type="text" className="form-control" id="nombrePost" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Url de imagen:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="URL"/>:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
+          <input type="url" className="form-control" id="urlPost" placeholder="URL"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Clasificación:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="Category"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPost" placeholder="Enter tags"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Origen:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="From"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="origenPost" placeholder="Origen"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Descripcion :</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="About"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="descripcionPost" placeholder="Enter value in COP"/>
         </div>
@@ -152,48 +153,48 @@ class MarcaDetail extends Component{
       
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postMarca}>Crear</button>
+              <button className="btn btn-success" onClick={this.postMarca}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12"><FormattedMessage id="BrandName"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url de imagen:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="URL"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Clasificación:</label>
+          <label className="control-label col-sm-12" ><FormattedMessage id="Category"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="clasificacionPut" placeholder={this.state.clasificacion}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Origen:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="From"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control"  id="origenPut" placeholder={this.state.origen}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Descripcion:</label>
+          <label className="control-label col-sm-12"><FormattedMessage id="About"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="descripcionPut"  placeholder={this.state.precio}/>
         </div>
         </div>
-       \
+    
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putMarca}>Actualizar</button>
+            <button className="btn btn-info" onClick={this.putMarca}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form >

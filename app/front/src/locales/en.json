@@ -18,7 +18,13 @@
 	"Products":"Products",
 	"Promotions":"Promotions",
 	"StoreName" :"Store name",
-	"Image":"URL image"
+	"Image":"URL image",
+	"Category":"Category",
+	"From":"From",
+	"About":"About",
+	"BrandName":"Brand name"
+
+
 
 
 }

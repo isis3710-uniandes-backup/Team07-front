@@ -19,8 +19,10 @@ class TarjetaRegalo extends Component{
         pathname:"/TarjetaRegaloDetail/"+this.props.data.id,
       }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
       </div>
-    </div>
+      </div>
   );
 }
+
+
 }
 export default TarjetaRegalo;
