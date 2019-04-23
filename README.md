@@ -1,5 +1,12 @@
 # Team07-Front
 ## Gift Now
+
+### Video
+
+#### Se puede apreciar en el siguiente enlace, las funcionalidades del sitio web. https://youtu.be/-GLtoFt9Iy0
+
+#### Es importante tener en cuenta que la primera parte del video, se realizó al momento de una prueba con un usuario y cuando este dejó de interactuar, se mostraron las funcionalidades que se encuentran en cada módulo, tomando como ejemplo el modulo de productos del sitio web.
+
 ### Descrición del proyecto:
 #### ¿Tienes problemas a la hora de escoger el regalo perfecto?
 #### ¿Muchas opciones y no sabes que escoger?
