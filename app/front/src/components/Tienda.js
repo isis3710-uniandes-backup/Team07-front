@@ -15,7 +15,7 @@ componentDidMount() {
   var s= this.state;
   s.direccion=this.props.data.direccion;
   this.setState(s);
-  if(this.props.data.direccion.search("Calle")===0&&detectBrowserLanguage()=='en'){
+  if(this.props.data.direccion.search("Calle")===0&&detectBrowserLanguage()==='en'){
     var state = this.state;
     var a=this.props.data.direccion.replace("Calle", "");
     console.log("entré");
@@ -30,7 +30,7 @@ componentDidMount() {
     return(
       <div className="card text-center">
         <div className="overflow">
-          <img className='card-img-top' src={this.props.data.imagen} alt='Image 1'/>
+          <img className='card-img-top' src={this.props.data.imagen} alt='recurso'/>
         </div>
         <div className="card-body text-dark">
         <h1 className="card-title">{this.props.data.nombre}</h1>

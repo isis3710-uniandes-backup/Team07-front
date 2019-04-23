@@ -20,8 +20,7 @@ class ProductoDetail extends Component{
   }
 
   componentDidMount() {    
-        var id=this.props.match.params.idDestino;        
-        var i;
+        var id=this.props.match.params.idDestino;    
             axios.get('http://localhost:3001/destino/'+id)
                 .then((response) => {
                     var state = this.state;

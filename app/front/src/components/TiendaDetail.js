@@ -4,17 +4,8 @@ import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
-import {FormattedNumber} from 'react-intl';
-import {FormattedDate} from 'react-intl';
 import styled from 'styled-components';
-import ReactTimeout from 'react-timeout'
-import  {
-  createClass,
-  PropTypes,
-} from 'react';
-import {
-  IntlMixin,
-} from 'react-intl';
+
 const Container = styled.div`
 background-color: #444;
 color:white;
@@ -45,7 +36,7 @@ class TiendaDetail extends Component{
 
   componentDidMount() {
         var id=this.props.match.params.idTienda;
-        var i;
+        
             axios.get('http://localhost:3001/tiendas/'+id)
                 .then((response) => {
                     var state = this.state;
@@ -94,16 +85,16 @@ class TiendaDetail extends Component{
     }
     putTienda=()=>{
       let nombre=document.getElementById('nombrePut').value;
-      if(nombre==""){
+      if(nombre===""){
         nombre=this.state.nombre;
       }
       let direccion=document.getElementById('direccionPut').value;
-      if(direccion==""){
+      if(direccion===""){
         direccion=this.state.direccion;
       }
     
       let img=document.getElementById('urlPut').value;
-      if(img==""){
+      if(img===""){
         img=this.state.imagen;
       }
   
