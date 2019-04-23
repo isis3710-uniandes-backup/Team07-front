@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import '../css/nav.css';
 import {FormattedMessage} from "react-intl";
-import jQuery from 'jquery';
 
 
 class NavBar extends Component{
@@ -61,7 +60,7 @@ class NavBar extends Component{
           <a className="nav-link" href="#"><img className="abr" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-female-circle-pink-512.png" alt="UserIcon"></img></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="">Admin</a>
+          <a className="nav-link" href="#">Admin</a>
         </li>
         </ul>
       </div>
