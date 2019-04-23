@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import '../css/nav.css';
 import {FormattedMessage} from "react-intl";
+import jQuery from 'jquery';
+
 
 class NavBar extends Component{
+
   render(){
     return(
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="my-navbar navbar navbar-expand navbar-dark bg-dark">
       <a className="navbar-brand"  href="/Home"><h2 className="gft">GiftNow</h2></a>
       <button className="navbar-toggler" type="button">
         <span className="navbar-toggler-icon"></span>
@@ -13,34 +16,34 @@ class NavBar extends Component{
 
       <div className="collapse navbar-collapse" id="navbarsExample02">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/Home">Inicio</a>
           </li>
-          <li className="nav-item active">
-            <a className="nav-link" href="/Promociones"><FormattedMessage id="Promotions"/></a>
+          <li className="nav-item">
+            <a className="nav-link my-nav-link" href="/Promociones" ><FormattedMessage id="Promotions"/></a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/ProductoList"><FormattedMessage id="Products"/></a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/TarjetaRegaloList"><FormattedMessage id="Cards"/></a>
           </li>
-            <li className="nav-item active">
+            <li className="nav-item">
             <a className="nav-link" href="/CuponList"><FormattedMessage id="Cuopons"/></a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item ">
             <a className="nav-link" href="/TiendaList"><FormattedMessage id="Stores"/></a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/MarcaList"><FormattedMessage id="Brands"/></a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/DestinoList">Destinos</a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/UsuarioList">Usuarios</a>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <a className="nav-link" href="/FacturaList">Facturas</a>
           </li>
           <li className="nav-item">
@@ -57,7 +60,7 @@ class NavBar extends Component{
         <li className="nav-item active">
           <a className="nav-link" href="#"><img className="abr" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-female-circle-pink-512.png" alt="UserIcon"></img></a>
         </li>
-        <li className="nav-item active">
+        <li className="nav-item">
           <a className="nav-link" href="">Admin</a>
         </li>
         </ul>
