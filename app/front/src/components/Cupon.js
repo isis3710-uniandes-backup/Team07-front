@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import {FormattedMessage} from "react-intl";
 import {FormattedNumber} from 'react-intl';
 import {FormattedDate} from 'react-intl';
-import  {
-  createClass,
-  PropTypes,
-} from 'react';
-import {
-  IntlMixin,
-} from 'react-intl';
-
 
 import '../css/producto-style.css';
 
@@ -19,7 +11,7 @@ class Cupon extends Component{
   render(){   return(
       <div className="card text-center">
         <div className="overflow">
-          <img className='card-img-top' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5eWvXs13e_7NnqtKtYikKS9jpX0nvRbfp0zAyYH13HmEq4TaQ" alt='Image 1'/>
+          <img className='card-img-top' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCk5eWvXs13e_7NnqtKtYikKS9jpX0nvRbfp0zAyYH13HmEq4TaQ" alt='Cupon'/>
         </div>
         <div className="card-body text-dark">
         <h1 className="card-title"><FormattedMessage id="Reference"/>: {this.props.data.id}</h1>

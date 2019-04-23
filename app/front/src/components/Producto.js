@@ -15,7 +15,7 @@ componentDidMount() {
   var s= this.state;
   s.name=this.props.data.nombre;
   this.setState(s);
-  if(this.props.data.nombre.search("Camiseta")===0&&detectBrowserLanguage()=='en'){
+  if(this.props.data.nombre.search("Camiseta")===0&&detectBrowserLanguage()==='en'){
     var state = this.state;
     var a=this.props.data.nombre.replace("Camiseta", "");
     console.log("entré");
@@ -30,7 +30,7 @@ componentDidMount() {
     return(
       <div className="card text-center">
         <div className="overflow">
-          <img className='card-img-top' src={this.props.data.src} alt='Image 1'/>
+          <img className='card-img-top' src={this.props.data.src} alt='Prod'/>
         </div>
         <div className="card-body text-dark">
         <h1 className="card-title">{this.state.name}</h1>

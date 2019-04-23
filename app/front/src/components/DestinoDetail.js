@@ -20,8 +20,7 @@ class ProductoDetail extends Component{
   }
 
   componentDidMount() {    
-        var id=this.props.match.params.idDestino;        
-        var i;
+        var id=this.props.match.params.idDestino;    
             axios.get('http://localhost:3001/destino/'+id)
                 .then((response) => {
                     var state = this.state;
@@ -117,30 +116,30 @@ class ProductoDetail extends Component{
         <form className="form-horizontal">
           <div className="form-group">
             <div className="col-sm-10">
-              <label className="control-label col-sm-12" for="ciudadPost"><FormattedMessage id="City"/>:</label>
+              <label className="control-label col-sm-12" htmlFor="ciudadPost"><FormattedMessage id="City"/>:</label>
               <input type="text" className="form-control" id="ciudadPost" placeholder="Enter city"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="urlPost"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="urlPost"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="direccionPost"><FormattedMessage id="Direction"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="direccionPost"><FormattedMessage id="Direction"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="direccionPost" placeholder="Enter direction"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="emailPost"><FormattedMessage id="Email"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="emailPost"><FormattedMessage id="Email"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="emailPost" placeholder="Enter email"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="fisicaPost"><FormattedMessage id="Physic"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="fisicaPost"><FormattedMessage id="Physic"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="fisicaPost" placeholder="Enter yes or no"/>
         </div>
@@ -156,31 +155,31 @@ class ProductoDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12" for="ciudadPut"><FormattedMessage id="City"/>:</label>
+            <label className="control-label col-sm-12" htmlFor="ciudadPut"><FormattedMessage id="City"/>:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="ciudadPut" placeholder={this.state.ciudad}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="urlPut"><FormattedMessage id="Image"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="urlPut"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
           <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="direccionPut"><FormattedMessage id="Direction"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="direccionPut"><FormattedMessage id="Direction"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="direccionPut" placeholder={this.state.direccion}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="emailPut"><FormattedMessage id="Email"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="emailPut"><FormattedMessage id="Email"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control"  id="emailPut" placeholder={this.state.email}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="fisicaPut"><FormattedMessage id="Physic"/>:</label>
+          <label className="control-label col-sm-12" htmlFor="fisicaPut"><FormattedMessage id="Physic"/>:</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" id="fisicaPut"  placeholder={this.state.fisica}/>
         </div>

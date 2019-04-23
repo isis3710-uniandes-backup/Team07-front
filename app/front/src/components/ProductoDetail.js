@@ -4,7 +4,6 @@ import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
-import {FormattedNumber} from 'react-intl';
 class ProductoDetail extends Component{
   constructor(props){
     super(props);
@@ -22,7 +21,6 @@ class ProductoDetail extends Component{
 
   componentDidMount() {
         var id=this.props.match.params.idProducto;
-        var i;
             axios.get('http://localhost:3001/producto/'+id)
                 .then((response) => {
                     var state = this.state;
@@ -41,7 +39,6 @@ class ProductoDetail extends Component{
     }
     postProducto=()=>{
       let nombre=document.getElementById('nombrePost').value;
-      let url=document.getElementById('urlPost').value;
       let clas=document.getElementById('clasificacionPost').value;
       let talla=document.getElementById('tallaPost').value;
       let img=document.getElementById('urlPost').value;
@@ -60,27 +57,27 @@ class ProductoDetail extends Component{
     }
     putProducto=()=>{
       let nombre=document.getElementById('nombrePut').value;
-      if(nombre==""){
+      if(nombre===""){
         nombre=this.state.nombre;
       }
       let clas=document.getElementById('clasificacionPut').value;
-      if(clas==""){
+      if(clas===""){
         clas=this.state.clasificacion;
       }
       let talla=document.getElementById('tallaPut').value;
-      if(talla==""){
+      if(talla===""){
         talla=this.state.talla;
       }
       let img=document.getElementById('urlPut').value;
-      if(img==""){
+      if(img===""){
         img=this.state.src;
       }
       let luk=document.getElementById('precioPut').value;
-      if(luk==""){
+      if(luk===""){
         luk=this.state.precio;
       }
       let cant=document.getElementById('cantidadPut').value;
-      if(cant==0){
+      if(cant===0){
         cant=this.state.cant;
       }
       let producto={
