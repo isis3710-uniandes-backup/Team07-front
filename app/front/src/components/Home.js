@@ -53,7 +53,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Cards"/></h2>
                                         <p><FormattedMessage id="CardsMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/TarjetaRegaloList"><FormattedMessage id="Cards"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/TarjetaRegaloList"><FormattedMessage id="Cards"/><span className="bg"></span></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Coupons"/></h2>
                                         <p><FormattedMessage id="CouponsMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/CuponList"><FormattedMessage id="Coupons"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/CuponList"><FormattedMessage id="Coupons"/><span className="bg"></span></a></p>
                                     </div>
                                     <a href="/CuponList" style= {{width:"100%", height:"100%", paddingTop:"15%"}}><img src="http://www.sheerid.com/wp-content/uploads/2013/11/coupon-envelope.png" alt="cupo" width="100%" height="100%" /></a>
 
@@ -73,7 +73,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Stores"/></h2>
                                         <p><FormattedMessage id="StoresMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/TiendaList"><FormattedMessage id="Stores"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/TiendaList"><FormattedMessage id="Stores"/><span className="bg"></span></a></p>
                                     </div>
                                     <a href="/TiendaList" style= {{width:"100%", height:"100%", paddingTop:"10%"}}><img src="http://nortonsetuphelp.info/wp-content/uploads/building-ecommerce-house-market-marketplace-shop-shopping-store-png.png" alt="tien" width="100%" height="100%" /></a>
 
@@ -84,7 +84,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Brands"/></h2>
                                         <p><FormattedMessage id="BrandsMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/MarcaList"><FormattedMessage id="Brands"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/MarcaList"><FormattedMessage id="Brands"/><span className="bg"></span></a></p>
                                     </div>
                                     <a href="/MarcaList" style= {{width:"100%", height:"100%", paddingTop:"10%"}}><img src="http://www.logospng.com/images/97/branding-in-the-digital-economy-modern-agency-97149.png" alt="marc" width="100%" height="100%" /></a>
 
@@ -96,7 +96,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Destinations"/></h2>
                                         <p><FormattedMessage id="DestinationsMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/DestinoList"><FormattedMessage id="Destinations"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/DestinoList"><FormattedMessage id="Destinations"/><span className="bg"></span></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Users"/></h2>
                                         <p><FormattedMessage id="UsersMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/UsuarioList"><FormattedMessage id="Users"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/UsuarioList"><FormattedMessage id="Users"/><span className="bg"></span></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ class Home extends Component{
                                     <div>
                                         <h2><FormattedMessage id="Bills"/></h2>
                                         <p><FormattedMessage id="BillsMessage"/></p>
-                                        <p><a className="btn3" style= {{color: "#EF5777", borderColor: "#EF5777", textTransform:"lowercase"}} href="/FacturaList"><FormattedMessage id="Bills"/><span className="bg"></span></a></p>
+                                        <p><a className="btn2" style= {{float:"none", textTransform:"lowercase"}} href="/FacturaList"><FormattedMessage id="Bills"/><span className="bg"></span></a></p>
                                     </div>
                                 </div>
                             </div>
