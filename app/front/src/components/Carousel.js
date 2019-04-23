@@ -29,7 +29,7 @@ class CarouselClass extends Component{
 
                     <h1 className="font-weight-light" style={{color:"#E6E6E6"}} ><b><FormattedMessage id="Moments"/></b></h1>
                     <p className="mb-5" style={{color:"#FFFFFF"}}><FormattedMessage id="MoMessage"/></p>
-                    <p><a href="ProductoList" style= {{backgroundColor: "#DD133F"}} className="btn btn-primary py-3 px-5 text-white"><FormattedMessage id="Site"/></a></p>
+                    <p><a href="ProductoList" style= {{backgroundColor: "#DD133F"}} className="btn3 btn-primary py-3 px-5 text-white"><FormattedMessage id="Site"/></a></p>
 
                   </div>
                 </div>

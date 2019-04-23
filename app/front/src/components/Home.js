@@ -24,7 +24,6 @@ class Home extends Component{
                  <div className="site-section">
                     <div className="container">
                         <div className="row align-items-stretch">
-
                              <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">
                                 <div className="unit-4 d-flex">
                                     <a href="/ProductoList" style= {{width:"100%", height:"100%", paddingTop:"10%"}}><img src="https://pngimage.net/wp-content/uploads/2018/06/icono-producto-png-7.png" alt="prod" width="100%" height="100%" /></a>
