@@ -25,7 +25,7 @@ class ProductoList extends Component{
             });
     }
   render(){
-    const imagesLoadedOptions = { background: '.my-bg-image-el' }
+    
     return(
       <Masonry className="coso container-fuid d-flex justify-content-center">
           {this.state.productos.map( (prod)=> <Producto key={prod.id} data={prod}/>)}

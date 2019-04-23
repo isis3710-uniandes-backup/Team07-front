@@ -47,17 +47,17 @@ class Promocion extends Component{
     return(
       <div className="card text-center">
         <div className="overflow">
-          <img className='card-img-top' src={this.state.tienda} alt='Image 1'/>
+          <img className='card-img-top' src={this.state.tienda} alt='tienda'/>
         </div>
         <div className="card-body text-dark">
         <h1 className="card-title">{this.props.data.nombre}</h1>
         </div>
         <div className="row">
         <div className="overflow">
-          <img className='card-img-top down' src={this.state.marcas[0]} alt='Image 1'/>
+          <img className='card-img-top down' src={this.state.marcas[0]} alt='marca1'/>
         </div>
         <div className="overflow">
-          <img className='card-img-top down' src={this.state.marcas[1]} alt='Image 1'/>
+          <img className='card-img-top down' src={this.state.marcas[1]} alt='marca2'/>
         </div>
         </div>
         <Link to={{

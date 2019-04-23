@@ -12,9 +12,15 @@ class Usuario extends Component{
         <img className='card-img-top' src={this.props.data.src} alt="user"></img>
       </div>
         <div className="card-body text-dark">
+
         <h1 className="card-title">{this.props.data.nombre}</h1>
         <p className="card-text text-secondary"><FormattedMessage id="User"/>: {this.props.data.username}</p>
         <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.props.data.email}</p>
+
+        <h1 className="card-title" style={{backgroundColor:"#FFFFFF"}}>{this.props.data.nombre}</h1>
+        <p className="card-text text-secondary" style={{backgroundColor:"#FFFFFF"}}><FormattedMessage id="User"/>: {this.props.data.username}</p>
+        <p className="card-text text-secondary" style={{backgroundColor:"#FFFFFF"}}><FormattedMessage id="Email"/>: {this.props.data.email}</p>
+
         <Link to={{
           pathname:"/UsuarioDetail/"+this.props.data.id,
         }}  className="btn3" data={this.props.data}><FormattedMessage id="MoreDetails"/><span className="bg"></span></Link>

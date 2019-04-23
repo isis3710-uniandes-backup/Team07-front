@@ -3,7 +3,6 @@ import {BrowserRouter} from 'react-router-dom'
 import Vista from './components/Structure'
 import './App.css';
 
-import {IntlProvider} from 'react-intl';
 
 class App extends Component {
   render() {
@@ -18,9 +17,5 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state){
-	return {
-	}
-}
 
 export default App;

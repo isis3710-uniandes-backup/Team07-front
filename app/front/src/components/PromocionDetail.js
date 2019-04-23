@@ -92,11 +92,11 @@ class PromocionDetail extends Component{
     putTarjetaRegalo=()=>{
       let nombre=document.getElementById('tituloPut').value;
       let img=[];
-      if(nombre==""){
+      if(nombre===""){
         nombre=this.state.nombre;
       }
       let url1=document.getElementById('url1Put').value;
-      if(url1==""){
+      if(url1===""){
         url1=this.state.imagenes[0];
       }
       let url1json={
@@ -104,7 +104,7 @@ class PromocionDetail extends Component{
       }
       img.push(url1json);
       let url2=document.getElementById('url2Put').value;
-      if(url2==""){
+      if(url2===""){
         url2=this.state.imagenes[1];
       }
       let url2json={
@@ -112,11 +112,11 @@ class PromocionDetail extends Component{
       }
       img.push(url2json);
       let men=document.getElementById('mensajePut').value;
-      if(men==""){
+      if(men===""){
         men=this.state.mensaje;
       }
       let plan=document.getElementById('plantillaPut').value;
-      if(plan==""){
+      if(plan===""){
         plan=this.state.plantilla;
       }
       let tarjetaRegalo={

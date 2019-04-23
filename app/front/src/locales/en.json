@@ -76,6 +76,8 @@
 	"BillsMessage": "Here you can find the different BILLS from clients and find out which are the stores in which they normally make purchases, in addition to the form of payment and its respective cost.",
 	"Home": "Home",
 	"UName": "Name",
-	"Password": "password"
+	"Password": "password",
+	"ValueP":"Payment value",
+	"PurchDate": "Purchase date"
 }
 

@@ -22,7 +22,6 @@ class UsuarioDetail extends Component{
 
   componentDidMount() {
         var id=this.props.match.params.idUsuario;
-        var i;
             axios.get('http://localhost:3001/usuario/'+id)
                 .then((response) => {
                     var state = this.state;

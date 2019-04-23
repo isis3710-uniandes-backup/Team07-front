@@ -23,8 +23,7 @@ class FacturaDetail extends Component{
   }
 
   componentDidMount() {    
-        var id=this.props.match.params.idFactura;        
-        var i;
+        var id=this.props.match.params.idFactura;    
             axios.get('http://localhost:3001/factura/'+id)
                 .then((response) => {
                     var state = this.state;
@@ -44,50 +43,72 @@ class FacturaDetail extends Component{
     }
 
     postFactura=()=>{
-      let direccion=document.getElementById('direccionPost').value;
-      let ciudad=document.getElementById('ciudadPost').value;
-      let email=document.getElementById('emailPost').value;
-      let img=document.getElementById('urlPost').value;
-      let fisica=document.getElementById('fisicaPost').value;
+      let src=document.getElementById('urlPost').value;
+      let valorCompra=document.getElementById('valorCPost').value;
+      let formaDePago=document.getElementById('formaPPost').value;
+      let fechaCompra=document.getElementById('fechaCPost').value;
+      let destino=document.getElementById('destinoPost').value;
+      let tienda=document.getElementById('tiendaPost').value;
+      let tarjetaRegalo=document.getElementById('tarjetaRPost').value;
+      let srcTarjeta=document.getElementById('urlTPost').value;
 
       let factura={
-        src:img,        
-        ciudad:ciudad,
-        direccion:direccion,
-        email:email,
-        fisica:fisica
+        src:src,
+        valorCompra:valorCompra,
+        formaDePago:formaDePago,      
+        fechaCompra:fechaCompra,
+        destino:destino,
+        tienda:tienda,
+        tarjetaRegalo:tarjetaRegalo,
+        srcTarjeta:srcTarjeta
       }
       axios.post('http://localhost:3001/factura', factura);
       return false;
     }
 
     putFactura=()=>{
-      let direccion=document.getElementById('direccionPut').value;
-      if(direccion===""){
-        direccion=this.state.direccion;
+      let src=document.getElementById('urlPut').value;
+      if(src===""){
+        src=this.state.src;
       }
-      let ciudad=document.getElementById('ciudadPut').value;
-      if(ciudad===""){
-        ciudad=this.state.ciudad;
+      let valorCompra=document.getElementById('valorCPut').value;
+      if(valorCompra===""){
+        valorCompra=this.state.valorCompra;
       }
-      let email=document.getElementById('emailPut').value;
-      if(email===""){
-        email=this.state.email;
+      let formaDePago=document.getElementById('formaPPut').value;
+      if(formaDePago===""){
+        formaDePago=this.state.formaDePago;
       }
-      let img=document.getElementById('urlPut').value;
-      if(img===""){
-        img=this.state.src;
+      let fechaCompra=document.getElementById('fechaCPut').value;
+      if(fechaCompra===""){
+        fechaCompra=this.state.fechaCompra;
       }
-      let fisica=document.getElementById('fisicaPut').value;
-      if(fisica===""){
-        fisica=this.state.fisica;
+      let destino=document.getElementById('destinoPut').value;
+      if(destino===""){
+        destino=this.state.destino;
       }
+      let tienda=document.getElementById('tiendaPut').value;
+      if(tienda===""){
+        tienda=this.state.tienda;
+      }
+      let tarjetaRegalo=document.getElementById('tarjetaRPut').value;
+      if(tarjetaRegalo===""){
+        tarjetaRegalo=this.state.tarjetaRegalo;
+      }
+      let srcTarjeta=document.getElementById('urlTPut').value;
+      if(srcTarjeta===""){
+        srcTarjeta=this.state.srcTarjeta;
+      }
+
       let factura={
-        src:img,        
-        ciudad:ciudad,
-        direccion:direccion,
-        email:email,
-        fisica:fisica
+        src:src,
+        valorCompra:valorCompra,
+        formaDePago:formaDePago,      
+        fechaCompra:fechaCompra,
+        destino:destino,
+        tienda:tienda,
+        tarjetaRegalo:tarjetaRegalo,
+        srcTarjeta:srcTarjeta
       }
       axios.put('http://localhost:3001/factura/'+this.state.id, factura);
     }
@@ -106,12 +127,20 @@ class FacturaDetail extends Component{
             <img className='card-img-top' src={this.state.src} alt='dest'/>
           </div>
             <div className="card-body text-dark">
+
             
             <p className="card-text text-secondary"><FormattedMessage id="Direction"/>: {this.state.valorCompra}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.state.formaDePago}</p>
+
+            <h1 className="card-title">$COP {this.state.valorCompra}</h1>
+            <p className="card-text text-secondary"><FormattedMessage id="Payment"/>: {this.state.formaDePago}}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Destination"/>: {this.state.destino}</p>
+            <p className="card-text text-secondary"><FormattedMessage id="Store"/>: {this.state.tienda}</p>
+            <img className='card-img-top' src={this.state.srcTarjeta} alt='tarj'/>
+            <p className="card-text text-secondary"><FormattedMessage id="GiftCard"/>: {this.state.tarjetaRegalo}</p>
             <div className="container">
             <Link to={{
-              pathname:"/DestinoList",
+              pathname:"/FacturaList",
             }}  className="back"><FormattedMessage id="Back"/><span className="bg"></span></Link>
             <button type="button" className="del float-right" onClick={this.deleteFactura}><FormattedMessage id="Delete"/><span className="bg"></span></button>
             </div>
@@ -123,8 +152,8 @@ class FacturaDetail extends Component{
         <form className="form-horizontal">
           <div className="form-group">
             <div className="col-sm-10">
-              <label className="control-label col-sm-12" for="ciudadPost"><FormattedMessage id="City"/>:</label>
-              <input type="text" className="form-control" id="ciudadPost" placeholder="Enter city"/>
+              <label className="control-label col-sm-12" for="valorCPost"><FormattedMessage id="Value"/>:</label>
+              <input type="text" className="form-control" id="valorCPost" placeholder="Enter value"/>
             </div>
           </div>
         <div className="form-group">
@@ -134,21 +163,39 @@ class FacturaDetail extends Component{
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="direccionPost"><FormattedMessage id="Direction"/>:</label>
+          <label className="control-label col-sm-12" for="formaPPost"><FormattedMessage id="Payment"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPost" placeholder="Enter direction"/>
+          <input type="text" className="form-control" id="formaPPost" placeholder="Enter payment"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="emailPost"><FormattedMessage id="Email"/>:</label>
+          <label className="control-label col-sm-12" for="fechaCPost"><FormattedMessage id="PurchDate"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="emailPost" placeholder="Enter email"/>
+          <input type="text" className="form-control" id="fechaCPost" placeholder="Enter date"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="fisicaPost"><FormattedMessage id="Physic"/>:</label>
+          <label className="control-label col-sm-12" for="destinoPost"><FormattedMessage id="Destination"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="fisicaPost" placeholder="Enter yes or no"/>
+          <input type="text" className="form-control" id="destinoPost" placeholder="Enter destination"/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="tiendaPost"><FormattedMessage id="Store"/>:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="tiendaPost" placeholder="Enter store"/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="urlTPost"><FormattedMessage id="Image"/>:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="urlTPost" placeholder="Enter url"/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="tarjetaRPost"><FormattedMessage id="GiftCard"/>:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="tarjetaRPost" placeholder="Enter gift card"/>
         </div>
         </div>
         <div className="form-group">
@@ -162,9 +209,9 @@ class FacturaDetail extends Component{
         <h1><FormattedMessage id="Modify"/> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12" for="ciudadPut"><FormattedMessage id="City"/>:</label>
+            <label className="control-label col-sm-12" for="valorCPut"><FormattedMessage id="Value"/>:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="ciudadPut" placeholder={this.state.valorCompra}/>
+              <input type="text" className="form-control" id="valorCPut" placeholder={this.state.valorCompra}/>
             </div>
           </div>
         <div className="form-group">
@@ -174,23 +221,42 @@ class FacturaDetail extends Component{
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="direccionPut"><FormattedMessage id="Direction"/>:</label>
+          <label className="control-label col-sm-12" for="formaPPut"><FormattedMessage id="Payment"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPut" placeholder={this.state.valorCompra}/>
+          <input type="text" className="form-control" id="formaPPut" placeholder={this.state.formaDePago}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="emailPut"><FormattedMessage id="Email"/>:</label>
+          <label className="control-label col-sm-12" for="fechaCPut"><FormattedMessage id="PurchDate"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control"  id="emailPut" placeholder={this.state.valorCompra}/>
+          <input type="text" className="form-control"  id="fechaCPut" placeholder={this.state.fechaCompra}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" for="fisicaPut"><FormattedMessage id="Physic"/>:</label>
+          <label className="control-label col-sm-12" for="destinoPut"><FormattedMessage id="Destination"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="fisicaPut"  placeholder={this.state.valorCompra}/>
+          <input type="text" className="form-control" id="destinoPut"  placeholder={this.state.destino}/>
         </div>
         </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="tiendaPut"><FormattedMessage id="Store"/>:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="tiendaPut"  placeholder={this.state.tienda}/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="urlTPut"><FormattedMessage id="Image"/>:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="urlTPut" placeholder={this.state.srcTarjeta}/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="tarjetaRPut"><FormattedMessage id="GiftCard"/>:</label>
+        <div className="col-sm-10">
+          <input type="text" className="form-control" id="tarjetaRPut" placeholder={this.state.tarjetaRegalo}/>
+        </div>
+        </div>
+
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
             <button className="back" onClick={this.putFactura}><FormattedMessage id="Modify"/></button>
