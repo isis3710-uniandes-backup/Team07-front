@@ -19,6 +19,12 @@
 	"Promotions":"Promociones",
 	"StoreName" :"Nombre de la tienda",
 	"Image":"URL imagen",
+
+	"Category":"Categoria",
+	"From":"Origen",
+	"About":"Descripcion",
+	"BrandName":"Nombre de la marca",
+
 	"CrearNuevo": "Crear Nuevo",
 	"PName": "Nombre Producto",
 	"Class": "Clasificación",
@@ -31,6 +37,10 @@
 	"Plan": "URL Imagen Plantilla",
 	"FI": "Fecha Inicio",
 	"FF": "Fecha Fin",
+
+	"Coupon":"Cupones",
+	"Stores":"Tiendas",
+	"Brands":"Marcas",
 	"Email": "Correo electrónico",
 	"City": "Ciudad",
 	"Physic": "Física",
@@ -51,9 +61,7 @@
 	"CardsMessage":"Aquí puedes encontrar las TARJETAS DE REGALO que han sido compradas por nuestros clientes para quienes más quieren.",
 	"Coupons":"Cupones",
 	"CouponsMessage":"Aquí puedes encontrar los diferentes CUPONES a los que puedes acceder por medio de las diferentes marcas y empresas con las que tenemos convenios.",
-	"Stores": "Tiendas",
 	"StoresMessage": "Aquí puedes encontrar las TIENDAS con las que tenemos convenios para que logres encontrar todo lo que buscas y necesitas.",
-	"Brands": "Marcas",
 	"BrandsMessage": "Aquí puedes encontrar tus MARCAS favoritas para que selecciones el regalo perfecto que más se acomode a tus necesidades.",
 	"Destinations": "Destinos",
 	"DestinationsMessage": "Aquí puedes encontrar los DESTINOS en los que con más frecuencia, nuestros clientes realizan los envíos de sus regalos.",

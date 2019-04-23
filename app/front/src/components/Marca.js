@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FormattedMessage} from "react-intl";
 
 import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
@@ -10,11 +11,11 @@ class Marca extends Component{
           <img className='card-img-top' src={this.props.data.imagen} alt='Image 1'/>
         </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">{this.props.data.nombre}</h4>
+        <h1 className="card-title">{this.props.data.nombre}</h1>
         <p className="card-text text-secondary">{this.props.data.descripcion}</p>
         <Link to={{
           pathname:"/MarcaDetail/"+this.props.data.id,
-        }}  className="btn btn-outline-success" data={this.props.data}>Ver más</Link>
+        }}  className="btn3" data={this.props.data}><FormattedMessage id="MoreDetails"/></Link>
         </div>
       </div>
     );

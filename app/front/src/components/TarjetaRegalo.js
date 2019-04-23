@@ -20,8 +20,10 @@ class TarjetaRegalo extends Component{
         pathname:"/TarjetaRegaloDetail/"+this.props.data.id,
       }}  className="btn3" data={this.props.data}><FormattedMessage id="MoreDetails"/><span className="bg"></span></Link>
       </div>
-    </div>
+      </div>
   );
 }
+
+
 }
 export default TarjetaRegalo;

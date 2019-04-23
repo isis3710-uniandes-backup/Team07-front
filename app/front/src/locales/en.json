@@ -14,11 +14,23 @@
 	"Date2": "Valid thru",
 	"Delete":"Delete",
 	"Back":"Back",
-	"Direction":"Direction",
+	"Direction":"Location",
 	"Products":"Products",
 	"Promotions":"Promotions",
 	"StoreName" :"Store name",
 	"Image":"URL image",
+
+	"Category":"Category",
+	"From":"From",
+	"About":"About",
+	"BrandName":"Brand name",
+
+
+
+
+
+
+
 	"CrearNuevo": "Create New",
 	"PName": "Product Name",
 	"Class": "Category",
@@ -31,6 +43,10 @@
 	"Plan": "Decorative Image URL",
 	"FI": "Start Date",
 	"FF": "End Date",
+
+	"Coupon":"Coupon",
+	"Stores":"Stores",
+	"Brands":"Brands",
 	"Email": "E-mail",
 	"City": "City",
 	"Physic": "Physic",
@@ -51,9 +67,7 @@
 	"CardsMessage":"Here you can find the GIFT CARDS that have been purchased by our customers for those who want more.",
 	"Coupons":"Coupons",
 	"CouponsMessage":"Here you can find the different COUPONS that you can access through the different brands and companies with which we have agreements.",
-	"Stores": "Stores",
 	"StoresMessage": "Here you can find the STORES with which we have agreements so that you can find everything you are looking for and need.",
-	"Brands": "Brands",
 	"BrandsMessage": "Here you can find your favorite BRANDS so that you can select the perfect gift that best suits your needs.",
 	"Destinations": "Destinations",
 	"Users": "Users",
@@ -64,3 +78,4 @@
 	"UName": "Name",
 	"Password": "password"
 }
+

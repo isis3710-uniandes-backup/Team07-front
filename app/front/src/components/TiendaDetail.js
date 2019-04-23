@@ -6,6 +6,8 @@ import axios from 'axios'
 import {FormattedMessage} from "react-intl";
 import {FormattedNumber} from 'react-intl';
 import {FormattedDate} from 'react-intl';
+import styled from 'styled-components';
+import ReactTimeout from 'react-timeout'
 import  {
   createClass,
   PropTypes,
@@ -13,6 +15,16 @@ import  {
 import {
   IntlMixin,
 } from 'react-intl';
+const Container = styled.div`
+background-color: #444;
+color:white;
+position:absolute;
+top:${props=>props.top}px;
+z-index:999;
+transition: top 0.5s ease;
+margin-left: 1150px;
+
+`;
 class TiendaDetail extends Component{
   constructor(props){
     super(props);
@@ -24,7 +36,9 @@ class TiendaDetail extends Component{
       direccion:"",
       marcas:[],
       promociones:[],
-      imagen:""
+      imagen:"",
+      top:-100,
+      msg:""
       
     };
   }
@@ -62,9 +76,21 @@ class TiendaDetail extends Component{
         
                 
       }
-      axios.post('http://localhost:3001/tiendas', tienda);
-      alert('Creacion correcta');
+      this.setState({top:1100, msg:"Se creo correctamente"});
+
+
+   
+     /* this.setState({top:-100});*/
+     axios.post('http://localhost:3001/tiendas', tienda);
     
+      
+       this.props.setTimeout(this.reset, 500000);
+        /*this.props.setTimeout(this.onPost2(tienda), 500000);*/
+      
+      
+     
+    
+
     }
     putTienda=()=>{
       let nombre=document.getElementById('nombrePut').value;
@@ -88,24 +114,41 @@ class TiendaDetail extends Component{
         direccion:direccion,
       
       }
+      this.setState({top:16});
+      this.setState({top:1100, msg:"Se actualizo correctamente"});
+
       axios.put('http://localhost:3001/tiendas/'+this.state.id, tienda);
+
+      this.props.setTimeout(this.onPost, 500000);
+      
       console.log(this.state.id);
     }
     deleteTienda=()=>{
       axios.delete('http://localhost:3001/tiendas/'+this.state.id);
       window.location.href = 'http://localhost:3000/TiendaList';
+      this.setState({top:16});
       console.log(this.state.id);
     }
+
+    reset=()=>{
+
+      this.setState({top:-100, msg:""});
+    }
+
   render(){
     return(
+      <React.Fragment>
       <div className="container">
+
+      <Container top={this.state.top}>{this.state.msg}</Container>
       <div className="float-left">
         <div className="card text-center eso">
           <div className="overflow">
             <img className='card-img-top' src={this.state.imagen} alt='Image 1'/>
           </div>
+
             <div className="card-body text-dark">
-            <h4 className="card-title">{this.state.nombre}</h4>
+            <h1 className="card-title">{this.state.nombre}</h1>
             <p className="card-text text-secondary"><FormattedMessage id="Direction" />: {this.state.direccion}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Products" />: Camiseta Polo</p>
             <p className="card-text text-secondary"><FormattedMessage id="Products" />: Tenis Reebok</p>
@@ -114,9 +157,9 @@ class TiendaDetail extends Component{
             
             <div className="container">
             <Link to={{
-              pathname:"/MarcaList",
-            }}  className="btn btn-outline-primary float-left"><FormattedMessage id="Back" /></Link>
-            <button type="button" className="btn btn-danger float-right" onClick={this.deleteTienda}><FormattedMessage id="Delete" /></button>
+              pathname:"/TiendaList",
+            }}  className="back"><FormattedMessage id="Back" /></Link>
+            <button type="button" className="del float-right" onClick={this.deleteTienda}><FormattedMessage id="Delete" /></button>
             </div>
             </div>
         </div>
@@ -125,63 +168,64 @@ class TiendaDetail extends Component{
         <h1><FormattedMessage id="Create" /> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12" for="nombrePost"><FormattedMessage id="StoreName" />:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
+              <input type="text" className="form-control" id="nombrePost" placeholder={this.state.nombre} />
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Url de imagen:</label>
+          <label className="control-label col-sm-12" for="urlPost"><FormattedMessage id="Image" />:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
+          <input type="text" className="form-control" id="urlPost" placeholder="URL"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Direccion:</label>
+          <label className="control-label col-sm-12" for="direccionPost"><FormattedMessage id="Direction" />:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPost" placeholder="Enter tags"/>
+          <input type="text" className="form-control" id="direccionPost" placeholder=""/>
         </div>
         </div>
         
       
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTienda}>Crear</button>
+              <button className="create" onClick={this.postTienda}><FormattedMessage id="Create" /></button>
           </div>
         </div>
         </form >
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify" /> </h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Nombre producto:</label>
+            <label className="control-label col-sm-12" for="nombrePut"><FormattedMessage id="StoreName" />:</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url de imagen:</label>
+          <label className="control-label col-sm-12" for="urlPut" ><FormattedMessage id="Image" />:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
+          <input type="text" className="form-control" id="urlPut" placeholder="URL"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Direccion:</label>
+          <label className="control-label col-sm-12" for="direccionPut"><FormattedMessage id="Direction" />:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="direccionPut" placeholder={this.state.clasificacion}/>
+          <input type="text" className="form-control" id="direccionPut" placeholder=""/>
         </div>
         </div>
         
        
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTienda}>Actualizar</button>
+            <button className="back" onClick={this.putTienda}><FormattedMessage id ="Modify"/></button>
           </div>
         </div>
         </form >
       </div>
       </div>
+      </React.Fragment>
     );
   }
 }

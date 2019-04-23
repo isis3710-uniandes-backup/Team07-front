@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import CarouselClass from './Carousel'
 import '../css/owl.carousel.min.css';
 import '../css/owl.theme.default.min.css';
@@ -123,6 +124,7 @@ class Home extends Component{
                     </div>
                  </div>
                 </div>
+
             </div>
         );
     }
