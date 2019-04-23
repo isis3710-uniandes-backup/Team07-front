@@ -20,47 +20,47 @@ class Factura extends Component{
     s.payment=this.props.data.formaDePago;
     this.setState(s);
     if(this.props.data.formaDePago.search("Tarjeta de crédito")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
+      var stateAB = this.state;
       var a=this.props.data.formaDePago.replace("Tarjeta de crédito", "");
       var b=a.concat(" ", "Credit card");
-      state.payment=b;
-      this.setState(state);
+      stateAB.payment=b;
+      this.setState(stateAB);
     }
     else if(this.props.data.formaDePago.search("Efectivo")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.formaDePago.replace("Efectivo", "");
-      var b=a.concat(" ", "Cash");
-      state.payment=b;
-      this.setState(state);
+      var stateCD = this.state;
+      var c=this.props.data.formaDePago.replace("Efectivo", "");
+      var d=c.concat(" ", "Cash");
+      stateCD.payment=d;
+      this.setState(stateCD);
     }
     s.store=this.props.data.tienda;
     if(this.props.data.tienda.search("Tarjetas Maguz")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.tienda.replace("Tarjetas Maguz", "");
-      var b=a.concat(" ", "Maguz cards");
-      state.store=b;
-      this.setState(state);
+      var stateEF = this.state;
+      var e=this.props.data.tienda.replace("Tarjetas Maguz", "");
+      var f=e.concat(" ", "Maguz cards");
+      stateEF.store=f;
+      this.setState(stateEF);
     }
     else if(this.props.data.tienda.search("Reebok")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.tienda.replace("Reebok", "");
-      var b=a.concat(" ", "Reebok");
-      state.store=b;
-      this.setState(state);
+      var stateGH = this.state;
+      var g=this.props.data.tienda.replace("Reebok", "");
+      var h=g.concat(" ", "Reebok");
+      stateGH.store=h;
+      this.setState(stateGH);
     }
     else if(this.props.data.tienda.search("BookStore")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.tienda.replace("BookStore", "");
-      var b=a.concat(" ", "BookStore");
-      state.store=b;
-      this.setState(state);
+      var stateIJ = this.state;
+      var i=this.props.data.tienda.replace("BookStore", "");
+      var j=i.concat(" ", "BookStore");
+      stateIJ.store=j;
+      this.setState(stateIJ);
     }
     else if(this.props.data.tienda.search("Cosechas")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.tienda.replace("Cosechas", "");
-      var b=a.concat(" ", "Harvests");
-      state.store=b;
-      this.setState(state);
+      var stateKL = this.state;
+      var k=this.props.data.tienda.replace("Cosechas", "");
+      var l=k.concat(" ", "Harvests");
+      stateKL.store=l;
+      this.setState(stateKL);
     }
   }
 

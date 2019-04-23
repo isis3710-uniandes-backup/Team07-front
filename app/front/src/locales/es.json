@@ -60,5 +60,8 @@
 	"Users": "Usuarios",
 	"UsersMessage": "Aquí puedes encontrar a nuestros USUARIOS registrados, junto con la información de regalos que han comprado para que sepas qué es lo que más les gusta comprar.",
 	"Bills": "Facturas",
-	"BillsMessage": "Aquí puedes encontrar las diferentes FACTURAS de clientes y enterarte de cuáles son las tiendas en las que normalmente realizan compras, además de la forma de pago y su respectivo costo."
+	"BillsMessage": "Aquí puedes encontrar las diferentes FACTURAS de clientes y enterarte de cuáles son las tiendas en las que normalmente realizan compras, además de la forma de pago y su respectivo costo.",
+	"Home": "Inicio",
+	"UName": "Nombre",
+	"Password": "Contraseña"
 }

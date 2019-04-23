@@ -14,7 +14,7 @@ class NavBar extends Component{
       <div className="collapse navbar-collapse" id="navbarsExample02">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/Home">Inicio</a>
+            <a className="nav-link" href="/Home"><FormattedMessage id="Home"/></a>
           </li>
           <li className="nav-item active">
             <a className="nav-link" href="/Promociones"><FormattedMessage id="Promotions"/></a>
@@ -35,13 +35,13 @@ class NavBar extends Component{
             <a className="nav-link" href="/MarcaList">Marcas</a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/DestinoList">Destinos</a>
+            <a className="nav-link" href="/DestinoList"><FormattedMessage id="Destinations"/></a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/UsuarioList">Usuarios</a>
+            <a className="nav-link" href="/UsuarioList"><FormattedMessage id="Users"/></a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/FacturaList">Facturas</a>
+            <a className="nav-link" href="/FacturaList"><FormattedMessage id="Bills"/></a>
           </li>
           <li className="nav-item">
           <form className="form-inline my-2 my-md-0">

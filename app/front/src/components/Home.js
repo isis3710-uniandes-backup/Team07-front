@@ -10,7 +10,6 @@ import '../css/aos.css';
 import '../css/bootstrap-datepicker.css';
 
 import {FormattedMessage} from "react-intl";
-import detectBrowserLanguage from 'detect-browser-language';
 
 class Home extends Component{
 

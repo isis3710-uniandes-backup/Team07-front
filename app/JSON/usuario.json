@@ -7,7 +7,7 @@
     "username":"vanessita",
     "password":"vane1234",
     "compras":[{"cantidad":100},{"cantidad":21}],
-    "facturas":[{"Factura":1 },{"idFactura":2}]
+    "facturas":[{"idFactura":1 },{"idFactura":2}]
 },
 {
     "id":2,
