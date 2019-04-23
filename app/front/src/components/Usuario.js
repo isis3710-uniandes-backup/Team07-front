@@ -12,7 +12,7 @@ class Usuario extends Component{
         <img className='card-img-top' src={this.props.data.src} alt="user"></img>
       </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">{this.props.data.nombre}</h4>
+        <h1 className="card-title">{this.props.data.nombre}</h1>
         <p className="card-text text-secondary"><FormattedMessage id="User"/>: {this.props.data.username}</p>
         <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.props.data.email}</p>
         <Link to={{

@@ -90,7 +90,7 @@ class Destino extends Component{
           <img className='card-img-top' src={this.props.data.src} alt='recurso'/>
         </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">{this.props.data.ciudad}</h4>
+        <h1 className="card-title">{this.props.data.ciudad}</h1>
         <p className="card-text text-secondary"><FormattedMessage id="Direction"/>: {this.state.direccion}</p>
         <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.props.data.email}</p>
         <Link to={{

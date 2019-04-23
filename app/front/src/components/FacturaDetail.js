@@ -106,7 +106,7 @@ class FacturaDetail extends Component{
             <img className='card-img-top' src={this.state.src} alt='dest'/>
           </div>
             <div className="card-body text-dark">
-            <h1 className="card-title">{this.state.ciudad}</h1>
+            
             <p className="card-text text-secondary"><FormattedMessage id="Direction"/>: {this.state.valorCompra}</p>
             <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.state.formaDePago}</p>
             <div className="container">

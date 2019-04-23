@@ -4,6 +4,7 @@ import '../css/producto-style.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import {FormattedMessage} from "react-intl";
+import detectBrowserLanguage from 'detect-browser-language';
 
 
 import styled from 'styled-components';
@@ -31,6 +32,7 @@ class MarcaDetail extends Component{
       descripcion:"",
       productos:[],
       top:-100,
+      
       msg:""
     };
   }
@@ -53,6 +55,60 @@ class MarcaDetail extends Component{
                     // pueden cambiar el tamaño de partion aca
                     this.setState(state);
                 });
+
+  /*  var s= this.state;
+    s.descripcion=this.props.data.descripcion;
+    this.setState(s);
+    if(this.props.data.descripcion.search("Marca de ropa, accesorios y maletas de costo medio")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de ropa, accesorios y maletas de costo medio", "");
+      var b=a.concat(" ", "Accessories, clothes and bags mid price brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+    else if(this.props.data.descripcion.search("Marca de ropa y accesorios de lujo")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de ropa y accesorios de lujo", "");
+      var b=a.concat(" ", "Accessories and clothes luxury  brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+    else if(this.props.data.descripcion.search("Marca de ropa y accesorios")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de ropa y accesorios", "");
+      var b=a.concat(" ", "Accessories and clothes brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+    else if(this.props.data.descripcion.search("Maraca de ropa, accesorios y zapatos de lujo")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Maraca de ropa, accesorios y zapatos de lujo", "");
+      var b=a.concat(" ", "Luxury accessories, clothes and footwear brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+     else if(this.props.data.descripcion.search("Marca de ropa y calzado")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de ropa y calzado", "");
+      var b=a.concat(" ", "Clothes and footwear brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+    else if(this.props.data.descripcion.search("Marca de ropa, accesorios y calzado de lujo")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de ropa, accesorios y calzado de lujo", "");
+      var b=a.concat(" ", "Accessories , clothes and footwear luxury  brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }
+
+      else if(this.props.data.descripcion.search("Marca de calzado casual")===0 && detectBrowserLanguage()==='en'){
+      var stateAB = this.state;
+      var a=this.props.data.descripcion.replace("Marca de calzado casual", "");
+      var b=a.concat(" ", "Casual footwear brand");
+      stateAB.descripcion=b;
+      this.setState(stateAB);
+    }*/
     }
     postMarca=()=>{
       let nombre=document.getElementById('nombrePost').value;

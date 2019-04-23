@@ -71,7 +71,7 @@ class Factura extends Component{
           <img className='card-img-top' src={this.props.data.src} alt='tipo'/>
         </div>
         <div className="card-body text-dark">
-        <h4 className="card-title">$COP {this.props.data.valorCompra}</h4>
+        <h1 className="card-title">$COP {this.props.data.valorCompra}</h1>
         <p className="card-text text-secondary"><FormattedMessage id="Payment"/>: {this.state.payment}</p>
         <p className="card-text text-secondary"><FormattedMessage id="Destination"/>: {this.props.data.destino}</p>
         <p className="card-text text-secondary"><FormattedMessage id="Store"/>: {this.state.store}</p>
