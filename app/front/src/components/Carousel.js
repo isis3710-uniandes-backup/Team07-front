@@ -16,10 +16,10 @@ class CarouselClass extends Component{
     return(
       <div>
       <div className="slide-one-item home-slider owl-carousel owl-loaded owl-drag">
-      
+
       <div className="owl-stage-outer">
         <div className="owl-stage" style={{transform: "translate3d(0px, 0px,0px)", transition: "all 0.25s ease 0s", width: "100%"}}>
-          
+
           <div className="owl-item cloned" style={{width:"100%"}}>
             <div className="site-blocks-cover overlay aos-init aos-animate" style={{backgroundImage: "url("+"https://redeclectica.files.wordpress.com/2014/12/picture-of-gifts.jpg"+")", height: "100%", width:"100%"}} data-aos="fade" data-stellar-background-ratio="0.5">
               <div className="container">
@@ -36,7 +36,7 @@ class CarouselClass extends Component{
               </div>
             </div>
           </div>
-                    
+
         </div>
       </div>
 
@@ -51,7 +51,7 @@ class CarouselClass extends Component{
           </span>
         </div>
 
-      </div> 
+      </div>
     </div>
     </div>
     );
