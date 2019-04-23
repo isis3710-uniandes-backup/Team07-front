@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../css/producto-style.css';
+import '../css/producto-styleMs.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import {FormattedMessage} from "react-intl";
 
 class UsuarioDetail extends Component{
   constructor(props){
@@ -9,195 +10,258 @@ class UsuarioDetail extends Component{
     this.state={
       id:0,
       pagina: 0,
-      titulo:"",
-      mensaje:"",
-      imagenes:[],
-      plantilla:""
+      src:"",
+      nombre:"",
+      email:[],
+      username:"",
+      password:"",
+      compras:[],
+      facturas:[]
     };
   }
 
   componentDidMount() {
         var id=this.props.match.params.idUsuario;
         var i;
-            axios.get('http://localhost:3001/tarjetaRegalo/'+id)
+            axios.get('http://localhost:3001/usuario/'+id)
                 .then((response) => {
                     var state = this.state;
-                    var tarjetaRegalo = response.data;
+                    var usuario = response.data;
                     state.id = id;
-                    state.titulo = tarjetaRegalo.titulo;
-                    state.mensaje = tarjetaRegalo.mensaje;
-                    state.imagenes.push(tarjetaRegalo.imagenes[0].url);
-                    state.imagenes.push(tarjetaRegalo.imagenes[1].url);
-                    state.plantilla = tarjetaRegalo.plantilla;
-                    state.pagina = 0;
+                    state.src = usuario.src;
+                    state.nombre = usuario.nombre;
+                    state.compras.push(usuario.compras);
+                    state.facturas.push(usuario.facturas);
+                    state.email = usuario.email;
+                    state.username = usuario.username;
+                    state.password = usuario.password;
+
                     // pueden cambiar el tamaño de partion aca
                     this.setState(state);
                 });
     }
-    postTarjetaRegalo=()=>{
-      let titulo=document.getElementById('tituloPost').value;
-      let img=[];
-      let url1=document.getElementById('url1Post').value;
-      let url1json={
-        url:url1
+
+    postUsuario=()=>{
+      let src=document.getElementById('urlPost').value;
+      let nombre=document.getElementById('nombrePost').value;
+      let email=document.getElementById('emailPost').value;
+      let username=document.getElementById('usernamePost').value;
+      let password=document.getElementById('passwordPost').value;
+      let compras=[];
+      let compras1=document.getElementById('compras1Post').value;
+      let compras1json={
+        cantidad:compras1
       }
-      img.push(url1json);
-      let url2=document.getElementById('url2Post').value;
-      let url2json={
-        url:url2
+      compras.push(compras1json);
+
+      let compras2=document.getElementById('compras2Post').value;
+      let compras2json={
+        cantidad:compras2
       }
-      img.push(url2json);
-      let men=document.getElementById('mensajePost').value;
-      let plan=document.getElementById('plantillaPost').value;
-      let tarjetaRegalo={
-        titulo:titulo,
-        mensaje:men,
-        imagenes:img,
-        plantilla:plan,
-        cupones:[],
-        productos:[]
+      compras.push(compras2json);
+
+      let facturas=[];
+      let facturas1=document.getElementById('facturas1Post').value;
+      let facturas1json={
+        idFactura:facturas1
       }
-      axios.post('http://localhost:3001/tarjetaRegalo', tarjetaRegalo);
+      facturas.push(facturas1json);
+
+      let facturas2=document.getElementById('facturas2Post').value;
+      let facturas2json={
+        idFactura:facturas2
+      }
+      facturas.push(facturas2json);
+      
+      let usuario={
+        src:src,
+        nombre:nombre,
+        email:email,
+        username:username,
+        password:password,
+        compras:compras,
+        facturas:facturas
+      }
+      axios.post('http://localhost:3001/usuario', usuario);
       return false;
     }
-    putTarjetaRegalo=()=>{
-      let titulo=document.getElementById('tituloPut').value;
-      let img=[];
-      if(titulo==""){
-        titulo=this.state.titulo;
+
+    putUsuario=()=>{
+      let src=document.getElementById('urlPut').value;
+      let compras=[];
+      let facturas=[];
+
+      if(src===""){
+        src=this.state.src;
       }
-      let url1=document.getElementById('url1Put').value;
-      if(url1==""){
-        url1=this.state.imagenes[0];
+      
+      let nombre=document.getElementById('nombrePut').value;
+      if(nombre===""){
+        nombre=this.state.nombre;
       }
-      let url1json={
-        url:url1
+      let email=document.getElementById('emailPut').value;
+      if(email===""){
+        email=this.state.email;
       }
-      img.push(url1json);
-      let url2=document.getElementById('url2Put').value;
-      if(url2==""){
-        url2=this.state.imagenes[1];
+      let username=document.getElementById('usernamePut').value;
+      if(username===""){
+        username=this.state.username;
       }
-      let url2json={
-        url:url2
+      let password=document.getElementById('passwordPut').value;
+      if(password===""){
+        password=this.state.password;
       }
-      img.push(url2json);
-      let men=document.getElementById('mensajePut').value;
-      if(men==""){
-        men=this.state.mensaje;
+
+      let compras1=document.getElementById('compras1Put').value;
+      if(compras1===""){
+        compras1=this.state.compras[0];
       }
-      let plan=document.getElementById('plantillaPut').value;
-      if(plan==""){
-        plan=this.state.plantilla;
+      let compras1json={
+        cantidad:compras1
       }
-      let tarjetaRegalo={
-        titulo:titulo,
-        mensaje:men,
-        imagenes:img,
-        plantilla:plan,
-        cupones:[],
-        productos:[]
+      compras.push(compras1json);
+
+      let compras2=document.getElementById('compras2Put').value;
+      if(compras2===""){
+        compras2=this.state.compras[1];
       }
-      axios.put('http://localhost:3001/tarjetaRegalo/'+this.state.id, tarjetaRegalo);
-      console.log(this.state.id);
+      let compras2json={
+        cantidad:compras2
+      }
+      compras.push(compras2json);
+
+      let facturas1=document.getElementById('facturas1Put').value;
+      if(facturas1===""){
+        facturas1=this.state.facturas[0];
+      }
+      let facturas1json={
+        idFactura:facturas1
+      }
+      facturas.push(facturas1json);
+
+      let facturas2=document.getElementById('facturas2Put').value;
+      if(facturas2===""){
+        facturas2=this.state.facturas[1];
+      }
+      let facturas2json={
+        idFactura:facturas2
+      }
+      facturas.push(facturas2json);
+
+      let usuario={
+        src:src,
+        nombre:nombre,
+        email:email,
+        username:username,
+        password:password,
+        compras:[],
+        facturas:[]
+      }
+      axios.put('http://localhost:3001/usuario/'+this.state.id, usuario);
     }
-    deleteTarjetaRegalo=()=>{
-      axios.delete('http://localhost:3001/tarjetaRegalo/'+this.state.id);
-      window.location.href = 'http://localhost:3000/TarjetaRegaloList';
+
+    deleteUsuario=()=>{
+      axios.delete('http://localhost:3001/usuario/'+this.state.id);
+      window.location.href = 'http://localhost:3000/UsuarioList';
     }
+
   render(){
     return(
       <div className="container">
       <div className="float-left">
       <div className="card text-center">
         <div className="overflow">
-          <img className='card-img-top' src={this.state.imagenes[0]} alt='Image 1'/>
+          <img className='card-img-top' src={this.state.src} alt='user'/>
         </div>
         <div className="card-body text-dark">
-        <h2 className="card-title">{this.state.titulo}</h2>
-        <p className="card-text text-secondary">{this.state.mensaje}</p>
-        <div className="overflow">
-          <img className='card-img-top' src={this.state.plantilla} alt='Image 1'/>
-        </div>
+        <h2 className="card-title">{this.state.nombre}</h2>
+        <p className="card-text text-secondary"><FormattedMessage id="User"/>: {this.state.username}</p>
+        <p className="card-text text-secondary"><FormattedMessage id="Email"/>: {this.state.email}</p>
         <div className="container">
         <Link to={{
-          pathname:"/TarjetaRegaloList/"+this.state.id,
-        }}  className="btn btn-outline-primary float-left" data={this.props.data}>Volver</Link>
-        <button type="button" className="btn btn-danger float-right" onClick={this.deleteTarjetaRegalo}>Eliminar</button>
+              pathname:"/UsuarioList",
+            }}  className="back"><FormattedMessage id="Back"/><span className="bg"></span></Link>
+        <button type="button" className="del float-right" onClick={this.deleteUsuario}><FormattedMessage id="Delete"/><span className="bg"></span></button>
         </div>
         </div>
       </div>
       </div>
       <div className="float-right">
-        <h1>Crear un nuevo </h1>
+        <h1><FormattedMessage id="CrearNuevo"/></h1>
         <form className="form-horizontal">
           <div className="form-group">
-            <label className="control-label col-sm-12">Titulo:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="tituloPost" placeholder="Enter title"/>
+              <label className="control-label col-sm-12" for="nombrePost"><FormattedMessage id="UName"/>:</label>           
+              <input type="text" className="form-control" id="nombrePost" placeholder="Enter name"/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Urls de imagenes:</label>
+          <label className="control-label col-sm-12" for="urlPost"><FormattedMessage id="Image"/>:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="url1Post" placeholder="Enter url"/>
-        </div>
-        <div className="col-sm-10">
-          <input type="url" className="form-control" id="url2Post" placeholder="Enter url"/>
+          <input type="url" className="form-control" id="urlPost" placeholder="Enter url"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Mensaje:</label>
+          <label className="control-label col-sm-12" for="emailPost"><FormattedMessage id="Email"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="mensajePost" placeholder="Enter message"/>
+          <input type="text" className="form-control" id="emailPost" placeholder="Enter e-mail"/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url plantilla:</label>
+          <label className="control-label col-sm-12" for="usernamePost"><FormattedMessage id="User"/>:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="plantillaPost" placeholder="Enter size"/>
+          <input type="url" className="form-control" id="usernamePost" placeholder="Enter user name"/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="passwordPost"><FormattedMessage id="Password"/>:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="passwordPost" placeholder="Enter password"/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-              <button className="btn btn-success" onClick={this.postTarjetaRegalo}>Crear</button>
+          <button className="create" onClick={this.postUsuario}><FormattedMessage id="Create"/></button>
           </div>
         </div>
         </form>
       </div>
       <div className="float-left abc">
-        <h1>Actualizar </h1>
+        <h1><FormattedMessage id="Modify"/></h1>
         <form className="form-horizontal">
-          <div className="form-group">
-            <label className="control-label col-sm-12">Titulo:</label>
+        <div className="form-group">
+            <label className="control-label col-sm-12" for="nombrePut"><FormattedMessage id="UName"/>:</label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="tituloPut" placeholder={this.state.titulo}/>
+              <input type="text" className="form-control" id="nombrePut" placeholder={this.state.nombre}/>
             </div>
           </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Urls de imagenes:</label>
-        <div className="col-sm-10">
-          <input type="url" className="form-control" id="url1Put" placeholder={this.state.imagenes[0]}/>
-        </div>
-        <div className="col-sm-10">
-          <input type="url" className="form-control" id="url2Put" placeholder={this.state.imagenes[1]}/>
+          <label className="control-label col-sm-12" for="urlPut"><FormattedMessage id="Image"/>:</label>
+          <div className="col-sm-10">
+          <input type="url" className="form-control" id="urlPut" placeholder={this.state.src}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12">Mensaje:</label>
+          <label className="control-label col-sm-12" for="emailPut"><FormattedMessage id="Email"/>:</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="mensajePut" placeholder={this.state.mensaje}/>
+          <input type="text" className="form-control" id="emailPut" placeholder={this.state.email}/>
         </div>
         </div>
         <div className="form-group">
-          <label className="control-label col-sm-12" >Url plantilla:</label>
+          <label className="control-label col-sm-12" for="usernamePut"><FormattedMessage id="User"/>:</label>
         <div className="col-sm-10">
-          <input type="url" className="form-control" id="plantillaPut" placeholder={this.state.plantilla}/>
+          <input type="url" className="form-control" id="usernamePut" placeholder={this.state.username}/>
+        </div>
+        </div>
+        <div className="form-group">
+          <label className="control-label col-sm-12" for="passwordPut"><FormattedMessage id="Password"/>:</label>
+        <div className="col-sm-10">
+          <input type="url" className="form-control" id="passwordPut" placeholder={this.state.password}/>
         </div>
         </div>
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
-            <button className="btn btn-info" onClick={this.putTarjetaRegalo}>Actualizar</button>
+            <button className="back" onClick={this.putUsuario}><FormattedMessage id="Modify"/></button>
           </div>
         </div>
         </form>

@@ -13,4 +13,4 @@
 ## Despliegue del front-end de la aplicación integrado con el back-end
 #### Para poder desplegar la aplicación es necesario ingresar al directorio de *Team07-front/app* y acceder a la consola de comandos, posteriormente, se debe ejecutar el comando *npm start*. Así mismo, se debe ingresar al directorio de *Team07-back/app/front* y acceder a la consola de comandos, posteriormente, se debe ejecutar el comando *npm start*, pronto se despliegará el front-end desarrollado con ReactJS y se podrá navegar por pestañas.
 
-Adicionalmente se debe instalar react-confirm-alert con el comando npm install react-confirm-alert --save
+Adicionalmente se debe los siguentes: instalar React Timeout para el manejo de tiempos entre ejecucion de ciertas tareas, esto con el comando npm install --save react-timeout, instalar styled components con el comandao npm install --save styled-components para el manejo de diferentes estilos.

@@ -11,17 +11,10 @@ import '../css/aos.css';
 import '../css/bootstrap-datepicker.css';
 
 import {FormattedMessage} from "react-intl";
-import detectBrowserLanguage from 'detect-browser-language';
 
 class Home extends Component{
 
     render(){
-
-
-                
-
-                
-
         return(
             <div data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
                 <div className="site-wrap">

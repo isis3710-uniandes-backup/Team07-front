@@ -19,67 +19,67 @@ class Destino extends Component{
     s.direccion=this.props.data.direccion;
     this.setState(s);
     if(this.props.data.direccion.search("Centro internacional")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
+      var stateAB = this.state;
       var a=this.props.data.direccion.replace("Centro internacional", "");
       var b=a.concat(" ", "International center");
-      state.direccion=b;
-      this.setState(state);
+      stateAB.direccion=b;
+      this.setState(stateAB);
     }
     else if(this.props.data.direccion.search("El rodadero")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("El rodadero", "");
-      var b=a.concat(" ", "Rodadero");
-      state.direccion=b;
-      this.setState(state);
+      var stateCD = this.state;
+      var c=this.props.data.direccion.replace("El rodadero", "");
+      var d=c.concat(" ", "Rodadero");
+      stateCD.direccion=d;
+      this.setState(stateCD);
     }
     else if(this.props.data.direccion.search("La ciudad sorpresa")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("La ciudad sorpresa", "");
-      var b=a.concat(" ", "The surprise city");
-      state.direccion=b;
-      this.setState(state);
+      var stateEF = this.state;
+      var e=this.props.data.direccion.replace("La ciudad sorpresa", "");
+      var f=e.concat(" ", "The surprise city");
+      stateEF.direccion=f;
+      this.setState(stateEF);
     }
     else if(this.props.data.direccion.search("El cayo acuario")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("El cayo acuario", "");
-      var b=a.concat(" ", "El cayo acuarium");
-      state.direccion=b;
-      this.setState(state);
+      var stateGH = this.state;
+      var g=this.props.data.direccion.replace("El cayo acuario", "");
+      var h=g.concat(" ", "El cayo acuarium");
+      stateGH.direccion=h;
+      this.setState(stateGH);
     }
     else if(this.props.data.direccion.search("Parque Arví")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("Parque Arví", "");
-      var b=a.concat(" ", "Arví park");
-      state.direccion=b;
-      this.setState(state);
+      var stateIJ = this.state;
+      var i=this.props.data.direccion.replace("Parque Arví", "");
+      var j=i.concat(" ", "Arví park");
+      stateIJ.direccion=j;
+      this.setState(stateIJ);
     }
     else if(this.props.data.direccion.search("Monserrate")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("Monserrate", "");
-      var b=a.concat(" ", "Monserrate");
-      state.direccion=b;
-      this.setState(state);
+      var stateKL = this.state;
+      var k=this.props.data.direccion.replace("Monserrate", "");
+      var l=k.concat(" ", "Monserrate");
+      stateKL.direccion=l;
+      this.setState(stateKL);
     }
     else if(this.props.data.direccion.search("Desierto de la Tatacoa")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("Desierto de la Tatacoa", "");
-      var b=a.concat(" ", "Desert of the Tatacoa");
-      state.direccion=b;
-      this.setState(state);
+      var stateMN = this.state;
+      var m=this.props.data.direccion.replace("Desierto de la Tatacoa", "");
+      var n=m.concat(" ", "Desert of the Tatacoa");
+      stateMN.direccion=n;
+      this.setState(stateMN);
     }
     else if(this.props.data.direccion.search("La Candelaria")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("La Candelaria", "");
-      var b=a.concat(" ", "Candelaria");
-      state.direccion=b;
-      this.setState(state);
+      var stateOP = this.state;
+      var o=this.props.data.direccion.replace("La Candelaria", "");
+      var p=o.concat(" ", "Candelaria");
+      stateOP.direccion=p;
+      this.setState(stateOP);
     }
     else if(this.props.data.direccion.search("La Laguna de la Cocha")===0 && detectBrowserLanguage()==='en'){
-      var state = this.state;
-      var a=this.props.data.direccion.replace("La Laguna de la Cocha", "");
-      var b=a.concat(" ", "The Cocha lagoon");
-      state.direccion=b;
-      this.setState(state);
+      var stateQR = this.state;
+      var q=this.props.data.direccion.replace("La Laguna de la Cocha", "");
+      var r=q.concat(" ", "The Cocha lagoon");
+      stateQR.direccion=r;
+      this.setState(stateQR);
     }
   }
 

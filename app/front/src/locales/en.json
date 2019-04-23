@@ -67,15 +67,15 @@
 	"CardsMessage":"Here you can find the GIFT CARDS that have been purchased by our customers for those who want more.",
 	"Coupons":"Coupons",
 	"CouponsMessage":"Here you can find the different COUPONS that you can access through the different brands and companies with which we have agreements.",
-	"Stores": "Stores",
 	"StoresMessage": "Here you can find the STORES with which we have agreements so that you can find everything you are looking for and need.",
-	"Brands": "Brands",
 	"BrandsMessage": "Here you can find your favorite BRANDS so that you can select the perfect gift that best suits your needs.",
 	"Destinations": "Destinations",
 	"Users": "Users",
 	"UsersMessage": "Here you can find our registered USERS, along with the information of gifts they have bought so you know what they like the most.",
 	"Bills": "Bills",
-	"BillsMessage": "Here you can find the different BILLS from clients and find out which are the stores in which they normally make purchases, in addition to the form of payment and its respective cost."
-
+	"BillsMessage": "Here you can find the different BILLS from clients and find out which are the stores in which they normally make purchases, in addition to the form of payment and its respective cost.",
+	"Home": "Home",
+	"UName": "Name",
+	"Password": "password"
 }
 

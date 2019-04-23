@@ -8,7 +8,6 @@ import '../css/style.css';
 import '../css/aos.css';
 import '../css/bootstrap-datepicker.css';
 
-
 import {FormattedMessage} from "react-intl";
 
 class CarouselClass extends Component{
