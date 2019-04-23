@@ -33,7 +33,7 @@ class Vista extends Component {
         return(
             <div>
                 <Navbar/>
-                <Route path="/Home" exact component={Home}/>
+                <Route path="/" exact component={Home}/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/ProductoDetail/:idProducto" exact component={ProductoDetail}/>
                 <Route path="/CuponDetail/:idCupon" exact component={CuponDetail}/>

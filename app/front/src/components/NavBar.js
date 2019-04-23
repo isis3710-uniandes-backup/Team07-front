@@ -9,7 +9,7 @@ class NavBar extends Component{
   render(){
     return(
       <nav className="my-navbar navbar navbar-expand navbar-dark bg-dark">
-      <a className="navbar-brand"  href="/Home"><h2 className="gft">GiftNow</h2></a>
+      <a className="navbar-brand"  href="/"><h2 className="gft">GiftNow</h2></a>
       <button className="navbar-toggler" type="button">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -17,7 +17,7 @@ class NavBar extends Component{
       <div className="collapse navbar-collapse" id="navbarsExample02">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/Home"><FormattedMessage id="Home"/></a>
+            <a className="nav-link" href="/"><FormattedMessage id="Home"/></a>
           </li>
           <li className="nav-item">
             <a className="nav-link my-nav-link" href="/Promociones" ><FormattedMessage id="Promotions"/></a>
