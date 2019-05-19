@@ -14,6 +14,10 @@ import localeEnMessages from "./locales/en";
 import esLocaleData from 'react-intl/locale-data/es';
 import localeEsMessages from "./locales/es";
 
+
+
+
+
 const funleng = function(){
 
     if(navigator.language.startsWith("en")){
@@ -35,7 +39,12 @@ ReactDOM.render(
 	<IntlProvider locale={navigator.language} messages = {funleng()}>
         <App/>
     </IntlProvider>, document.getElementById("root")
+
+
 	 );
+
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -25,6 +25,8 @@ import DestinoDetail from './DestinoDetail'
 import FacturaList from './FacturaList'
 import FacturaDetail from './FacturaDetail'
 
+import  Callback from './Callback.js'
+
 import Home from './Home'
 
 class Vista extends Component {
@@ -52,6 +54,7 @@ class Vista extends Component {
                 <Route path="/UsuarioDetail/:idUsuario" exact component={UsuarioDetail}/>
                 <Route path="/FacturaList" exact component={FacturaList}/>
                 <Route path="/FacturaDetail/:idFactura" exact component={FacturaDetail}/>
+                <Route path="/callback" exact component={Callback}/>
             </div>
         );
     }
