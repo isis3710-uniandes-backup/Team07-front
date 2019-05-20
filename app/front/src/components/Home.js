@@ -9,10 +9,16 @@ import '../css/jquery-ui.css';
 import '../css/style.css';
 import '../css/aos.css';
 import '../css/bootstrap-datepicker.css';
+import Auth from './Auth.js';
 
 import {FormattedMessage} from "react-intl";
 
 class Home extends Component{
+
+    componentDidMount() {
+        const auth=new Auth();
+        auth.handleAuthentication();
+    }
 
     render(){
         return(

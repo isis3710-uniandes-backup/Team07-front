@@ -2,10 +2,13 @@
   "name": "app",
   "version": "0.0.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "dev": "concurrently \"npm run start\" \"npm --prefix ./front run start\" "
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.0",

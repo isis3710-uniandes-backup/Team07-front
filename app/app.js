@@ -14,6 +14,7 @@ var productoRouter = require('./routes/producto');
 var tiendaRouter = require('./routes/tienda');
 var marcaRouter = require('./routes/marca');
 var cuponRouter = require('./routes/cupon');
+var loginRouter = require('./routes/login');
 
 var app = express();
 

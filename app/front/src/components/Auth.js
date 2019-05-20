@@ -1,4 +1,7 @@
 import auth0 from "auth0-js";
+import { withRouter } from 'react-router-dom';
+import ProductoList from './/ProductoList';
+
 
 
 export default class Auth{
@@ -26,6 +29,10 @@ export default class Auth{
                 localStorage.setItem("id_token", authResults.idToken);
                 localStorage.setItem("expires_at", expiresAt);
 
+              //withRouter.history.push('/ProductoList');
+
+
+
 
             }
             
@@ -33,6 +40,9 @@ export default class Auth{
     }
 
     isAuthenticated(){
+
+         let expiresAt =JSON.parse(localStorage.getItem("expires_at"));
+         return new Date().getTime() < expiresAt;
 
     }
 

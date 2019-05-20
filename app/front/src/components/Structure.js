@@ -25,17 +25,25 @@ import DestinoDetail from './DestinoDetail'
 import FacturaList from './FacturaList'
 import FacturaDetail from './FacturaDetail'
 
+import {BrowserRouter, Switch} from 'react-router-dom'
+
 import  Callback from './Callback.js'
+import  Login from './Login.js'
 
 import Home from './Home'
+import Auth from './Auth.js'
 
+
+const  auth = new Auth();
 class Vista extends Component {
 
     render() {
         return(
             <div>
+
+
                 <Navbar/>
-                <Route path="/" exact component={Home}/>
+                <Route path="/" exact component= {Home}/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/ProductoDetail/:idProducto" exact component={ProductoDetail}/>
                 <Route path="/CuponDetail/:idCupon" exact component={CuponDetail}/>
@@ -55,6 +63,9 @@ class Vista extends Component {
                 <Route path="/FacturaList" exact component={FacturaList}/>
                 <Route path="/FacturaDetail/:idFactura" exact component={FacturaDetail}/>
                 <Route path="/callback" exact component={Callback}/>
+                <Route path="/login" exact component={Login}/>
+
+
             </div>
         );
     }

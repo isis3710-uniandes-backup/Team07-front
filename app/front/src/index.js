@@ -16,7 +16,15 @@ import localeEsMessages from "./locales/es";
 
 
 
+let state ={};
+window.setState=(changes)=>{
+    state=Object.assign({}, this.state, changes);
 
+}
+
+let initalState={
+
+};
 
 const funleng = function(){
 
