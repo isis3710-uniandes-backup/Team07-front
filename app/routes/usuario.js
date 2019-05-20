@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
 const jfs = require("jsonfile");
+var middleware = require("../middleware.js");
 
 /* GET usuarios. */
-router.get('/', function(req, res) {
+router.get('/',middleware.checkToken, function(req, res, next) {
     let data= jfs.readFileSync('./JSON/usuario.json','utf8');
     console.log(data);
     res.send(data);
 });
 
 /* GET usuario por id*/
-router.get('/:idUsuario', function (req, res) {
+router.get('/:idUsuario', middleware.checkToken , function (req, res) {
     var idusuario = req.params.idUsuario;
     var temp;
     console.log(idusuario);
@@ -30,7 +31,7 @@ router.get('/:idUsuario', function (req, res) {
   });
 
   /* POST usuario*/
-  router.post('/', function (req, res){
+  router.post('/', middleware.checkToken, function (req, res){
 
     let dataJSON=jfs.readFileSync('./JSON/usuario.json','utf8')
     let idTemp=1;
@@ -61,7 +62,7 @@ router.get('/:idUsuario', function (req, res) {
   });
 
   /* PUT usuario por id */
-  router.put('/:idUsuario', function (req, res) {
+  router.put('/:idUsuario', middleware.checkToken,function (req, res) {
 
     var idusuario = req.params.idUsuario;
     var inp=req.body;
@@ -109,9 +110,9 @@ router.get('/:idUsuario', function (req, res) {
   })
 
   /* DELETE usuario*/
-  router.delete('/:idUsuario', function (req, res) {
+  router.delete('/:idUsuario', middleware.checkToken,function (req, res) {
 
-    var idusuario = req.params.idUsuario;
+    var idusuario = req.paramss.idUsuario;
 
     let data= jfs.readFileSync('./JSON/usuario.json','utf8');
     let final =new Array();
