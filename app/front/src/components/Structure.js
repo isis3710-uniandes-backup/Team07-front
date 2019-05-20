@@ -9,6 +9,7 @@ import ProductoDetail from './ProductoDetail'
 import MarcaDetail from './MarcaDetail'
 import TiendaDetail from './TiendaDetail'
 import CuponDetail from './CuponDetail'
+import Registro from './Registro'
 
 import TarjetaRegaloDetail from './TarjetaRegaloDetail'
 
@@ -42,7 +43,7 @@ class Vista extends Component {
             <div>
 
 
-                <Navbar/>
+                <Navbar ADMIN={this.props.ADMIN} logged={this.props.logged} logout={this.props.logout}/>
                 <Route path="/" exact component= {Home}/>
                 <Route path="/ProductoList" exact component={ProductoList}/>
                 <Route path="/ProductoDetail/:idProducto" exact component={ProductoDetail}/>
@@ -62,8 +63,8 @@ class Vista extends Component {
                 <Route path="/UsuarioDetail/:idUsuario" exact component={UsuarioDetail}/>
                 <Route path="/FacturaList" exact component={FacturaList}/>
                 <Route path="/FacturaDetail/:idFactura" exact component={FacturaDetail}/>
-                <Route path="/callback" exact component={Callback}/>
-                <Route path="/login" exact component={Login}/>
+                <Route path="/registro" exact component={Registro}/>
+                <Route path="/login" render={(props)=><Login {...this.props}/>}/>
 
 
             </div>

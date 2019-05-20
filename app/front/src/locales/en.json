@@ -78,6 +78,8 @@
 	"UName": "Name",
 	"Password": "password",
 	"ValueP":"Payment value",
-	"PurchDate": "Purchase date"
+	"PurchDate": "Purchase date",
+	"Register": "Sign up",
+	"Login": "Sign in",
+	"Logout": "Sign out"
 }
-

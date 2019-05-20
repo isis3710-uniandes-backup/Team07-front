@@ -8,12 +8,10 @@ import Auth from "./Auth.js"
 const auth = new Auth();
 
 
-class NavBar extends Component{
+const NavBar =(props)=> (
 
 
 
-  render(){
-    return(
       <nav className="my-navbar navbar navbar-expand navbar-dark bg-dark">
       <a className="navbar-brand"  href="/"><h2 className="gft">GiftNow</h2></a>
       <button className="navbar-toggler" type="button">
@@ -46,7 +44,7 @@ class NavBar extends Component{
           <li className="nav-item">
             <a className="nav-link" href="/DestinoList"><FormattedMessage id="Destinations"/></a>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" hidden={!props.ADMIN}>
             <a className="nav-link" href="/UsuarioList"><FormattedMessage id="Users"/></a>
           </li>
           <li className="nav-item">
@@ -60,25 +58,26 @@ class NavBar extends Component{
         </ul>
 
         <ul className="navbar-nav mr-auto">
+        <li className="nav-item active" hidden={props.logged}>
+          <a className="nav-link" href="/registro"><FormattedMessage id="Register"/></a>
+        </li>
+        <li className="nav-item active" hidden={props.logged}>
+          <a className="nav-link" href="/login"><FormattedMessage id="Login"/></a>
+        </li>
+        <li className="nav-item active" hidden={!props.logged}>
+            <a className="nav-link" href="/" onClick={props.logout}><FormattedMessage id="Logout"/></a>
+        </li>
 
-          <li>
-
-            <button onClick={auth.login}>login</button>
-          </li>
         <li className="nav-item active">
           <a className="nav-link" href="#"><img className="abr" src="https://static1.squarespace.com/static/55b13236e4b0ba28db37e41a/5b05ac2ef950b76fb5f198b4/5b05bab26d2a731b78aad9f4/1527105845666/AKF0049-Shopping-Trolley-Icon.png" alt="Car"></img></a>
         </li>
-        <li className="nav-item active">
+        <li className="nav-item active" hidden={!props.logged || props.ADMIN}>
           <a className="nav-link" href="#"><img className="abr" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-female-circle-pink-512.png" alt="UserIcon"></img></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Admin</a>
         </li>
         </ul>
       </div>
     </nav>
 
-    )
-  }
-}
+);
+
 export default NavBar;

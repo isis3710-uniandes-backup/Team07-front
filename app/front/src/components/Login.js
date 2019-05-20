@@ -1,43 +1,62 @@
-import React , {Component} from "react";
+import React from 'react';
 import axios from 'axios'
+import {FormattedMessage} from 'react-intl';
 
-export default class Login extends Component {
-
-    constructor(props){
+export default class Login extends React.Component {
+    constructor(props) {
         super(props);
         this.state={
-            email: '',
-            password:''
-        };
-        this.change=this.change.bind(this);
-        this.submit=this.submit.bind(this);
-    }
-    change(e){
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    submit(e){
-        e.preventDefault();
-        axios.post('/getToken',{
-            email: this.state.email,
-            password: this.state.password
-        }).then(res=>localStorage.setItem('cool-jwt', res.data));
+            exito:false
+        }
+        if(this.props.logged){
+            if(this.props.ADMIN){
+                window.location="/";
+            }
+            else{
+                window.location="perfil";
+            }
+        }
+        console.log('el token actual es:'+ localStorage.getItem("token"));
     }
 
+    login=(event)=>{
+        event.preventDefault();
+        let username1=document.getElementById('usernameInput').value;
+        let password1=document.getElementById('passwordInput').value;
+        let dats={
+            username:username1,
+            password:password1
+        }
+        console.log("Se envia request login");
+        let actualizar=this.props.actualizar;
+        axios.post('http://localhost:3001/login',dats).then((response)=>{
+            let bool=(response.status===200);
+            if(bool){
+                localStorage.setItem('token',JSON.stringify(response.data.token));
+                localStorage.setItem('userid',JSON.stringify(response.data.userid));
+                if(response.data.userid==='admin'){
+                    actualizar(response.data.token,response.data.userid,true);
+                }
+                window.location.reload();
+            }
+            else{
+                alert('Usuario o contraseña incorrecto');
+            }
+        }).catch((e)=>{
+            console.log(e);
+            console.log(dats);
+            alert("Usuario o contraseña incorrecto");
+        });
+    }
     render() {
-        return(
-
+        return (
             <div>
-                <form onSubmit={e=>this.submit(e)}>
-                    <label>email</label><input type="text" name="email" onChange={e=>this.change(e)} value={this.state.email}/>
-                    <label>password</label><input type="password" name="password" onChange={e=>this.change(e)} value={this.state.password}/>
-
-                    <button type="submit">Submit</button>
+                <form>
+                    <input type="text" placeholder="Usuario" name="usuario" id='usernameInput'></input>
+                    <input type="password" placeholder="Constraseña" name="contrasena" id='passwordInput'></input>
+                    <button className='btn btn-info' onClick={this.login}><FormattedMessage id="Login"/></button>
                 </form>
-
             </div>
-        );
+        )
     }
 }
