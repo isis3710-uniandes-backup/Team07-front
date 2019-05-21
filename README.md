@@ -21,3 +21,19 @@
 #### Para poder desplegar la aplicación es necesario ingresar al directorio de *Team07-front/app* y acceder a la consola de comandos, posteriormente, se debe ejecutar el comando *npm start*. Así mismo, se debe ingresar al directorio de *Team07-back/app/front* y acceder a la consola de comandos, posteriormente, se debe ejecutar el comando *npm start*, pronto se despliegará el front-end desarrollado con ReactJS y se podrá navegar por pestañas.
 
 Adicionalmente se debe los siguentes: instalar React Timeout para el manejo de tiempos entre ejecucion de ciertas tareas, esto con el comando npm install --save react-timeout, instalar styled components con el comandao npm install --save styled-components para el manejo de diferentes estilos.
+
+
+ENTREGA 5 
+
+Link del repo del back:
+https://github.com/jdcarrillor/Back-Team07
+
+Link del canal del video (Funcionalidades Regalayapp) :
+https://www.youtube.com/channel/UCbq2ig7foKYn6rHlsJP629w?view_as=subscriber
+
+Link del despliegue del back:
+https://regalayapp1.herokuapp.com/
+
+Link del despliegue del front:
+https://front-8b02f.firebaseapp.com/TarjetaRegaloList/
+
